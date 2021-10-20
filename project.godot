@@ -10,8 +10,8 @@ config_version=4
 
 [application]
 
-config/name="TopDownShooter"
-run/main_scene="res://Assets/Prefabs/World.tscn"
+config/name="CubeCrawler"
+run/main_scene="res://Assets/Scenes/World.tscn"
 config/icon="res://icon.png"
 
 [input]
