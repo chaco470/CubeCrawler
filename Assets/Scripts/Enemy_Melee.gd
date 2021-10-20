@@ -15,6 +15,5 @@ func _physics_process(delta):
 	move_and_collide(motion)
 
 
-func _on_Area2D_body_entered(body):
-	if "Bullet" in body.name:
-		queue_free()
+func hit():
+	queue_free()

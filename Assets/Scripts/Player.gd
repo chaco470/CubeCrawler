@@ -22,8 +22,7 @@ func _physics_process(delta):
 
 func fire():
 	var bullet_instance = bullet.instance()
-	bullet_instance.position = bullet_spawn.get_global_position()
-	bullet_instance.rotation_degrees = rotation_degrees
+	bullet_instance.initialize(bullet_spawn.get_global_position(), global_position.direction_to(bullet_spawn.global_position))
 	get_tree().get_root().call_deferred("add_child",bullet_instance)
 
 func kill():
