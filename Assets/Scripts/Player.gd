@@ -4,20 +4,18 @@ export (float) var speed = 500
 var max_speed = 500
 export (PackedScene) var bullet:PackedScene
 onready var bullet_spawn = $BulletSpawn
-
+export (int) var max_health = 20
 var acceleration = 1000
 var motion = Vector2.ZERO
-
+onready var state_machine = $StateMachine
+var axis = Vector2.ZERO
 func _ready():
-	pass # Replace with function body.
+	state_machine.set_parent(self)
+	PlayerData.call_deferred("set_max_health", max_health)
+
 
 func _physics_process(delta):
-	var axis = get_input_axis()
-	if axis == Vector2.ZERO:
-		apply_friction(acceleration * delta)
-	else:
-		applymovement(axis * acceleration *delta)
-	motion = move_and_slide(motion)
+	
 	
 	
 
@@ -27,12 +25,25 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("LMB"):
 		fire()
 func get_input_axis():
-	var axis = Vector2.ZERO
+	
 	axis.x = int(Input.is_action_pressed("_rigth")) - int(Input.is_action_pressed("_left"))
 	axis.y = int(Input.is_action_pressed("_down")) - int(Input.is_action_pressed("_up"))
 	return axis.normalized()
+
+func _handle_cannon_actions():
+	look_at(get_global_mouse_position())
 	
-	
+	if Input.is_action_just_pressed("LMB"):
+		fire()
+		
+func _handle_move_input():
+	var axis = get_input_axis()
+	if axis == Vector2.ZERO:
+		apply_friction(acceleration )
+	else:
+		applymovement(axis * acceleration )
+	motion = move_and_slide(motion)
+
 func apply_friction(amount):
 	if motion.length() > amount:
 		motion -= motion.normalized() * amount

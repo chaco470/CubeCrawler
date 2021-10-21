@@ -24,6 +24,10 @@ config/name="CubeCrawler"
 run/main_scene="res://Assets/Scenes/World.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+PlayerData="*res://globals/PlayerData.gd"
+
 [input]
 
 _up={
