@@ -16,14 +16,11 @@ func _ready():
 
 func _physics_process(delta):
 	
-	
-	
-
-	
 	look_at(get_global_mouse_position())
 	
 	if Input.is_action_just_pressed("LMB"):
 		fire()
+
 func get_input_axis():
 	
 	axis.x = int(Input.is_action_pressed("_rigth")) - int(Input.is_action_pressed("_left"))
@@ -57,7 +54,7 @@ func applymovement(acceletarion):
 
 func fire():
 	var bullet_instance = bullet.instance()
-	bullet_instance.initialize(bullet_spawn.get_global_position(), global_position.direction_to(bullet_spawn.global_position))
+	bullet_instance.initialize(self.rotation,bullet_spawn.get_global_position(), global_position.direction_to(bullet_spawn.global_position))
 	get_tree().get_root().call_deferred("add_child",bullet_instance)
 
 func kill():

@@ -7,8 +7,9 @@ var degree
 func _ready():
 	pass
 	
-func initialize(spawn_position:Vector2, degree:Vector2):
+func initialize(rotation_given,spawn_position:Vector2, degree:Vector2):
 	self.degree = degree
+	self.rotation = rotation_given
 	global_position = spawn_position
 	
 	
