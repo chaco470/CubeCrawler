@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 var target
+export (int) var dmg = 1
 
 var motion = Vector2()
 
@@ -34,3 +35,8 @@ func _on_Area2D_body_entered(body):
 func _on_Area2D_body_exited(body):
 	target = null 
 
+
+
+func _on_HitPlayer_body_entered(body):
+	if body.has_method("notify_hit"):
+		body.notify_hit(-dmg)
