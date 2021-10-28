@@ -39,65 +39,79 @@ points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
 [node name="Main" type="Node"]
 script = ExtResource( 9 )
 
-[node name="Enemigos_sala_1" type="Node" parent="."]
+[node name="RoomManager_1" type="Node" parent="."]
 script = ExtResource( 7 )
 
-[node name="Enemy_Melee" parent="Enemigos_sala_1" instance=ExtResource( 2 )]
+[node name="Enemy_Melee" parent="RoomManager_1" instance=ExtResource( 2 )]
 position = Vector2( -224.804, 1039.2 )
 
-[node name="Enemy_Melee7" parent="Enemigos_sala_1" instance=ExtResource( 2 )]
+[node name="Enemy_Melee7" parent="RoomManager_1" instance=ExtResource( 2 )]
 position = Vector2( 211.196, 1309.2 )
 
-[node name="Enemy_Melee8" parent="Enemigos_sala_1" instance=ExtResource( 2 )]
+[node name="Enemy_Melee8" parent="RoomManager_1" instance=ExtResource( 2 )]
 position = Vector2( 863.196, 1315.2 )
 
-[node name="Enemy_Melee9" parent="Enemigos_sala_1" instance=ExtResource( 2 )]
+[node name="Enemy_Melee9" parent="RoomManager_1" instance=ExtResource( 2 )]
 position = Vector2( 1249.2, 975.205 )
 
-[node name="Enemy_Melee2" parent="Enemigos_sala_1" instance=ExtResource( 2 )]
+[node name="Enemy_Melee2" parent="RoomManager_1" instance=ExtResource( 2 )]
 position = Vector2( 1208.03, 216.426 )
 
-[node name="Enemy_Melee3" parent="Enemigos_sala_1" instance=ExtResource( 2 )]
+[node name="Enemy_Melee3" parent="RoomManager_1" instance=ExtResource( 2 )]
 position = Vector2( -309.851, 378.826 )
 
-[node name="Enemy_Melee4" parent="Enemigos_sala_1" instance=ExtResource( 2 )]
+[node name="Enemy_Melee4" parent="RoomManager_1" instance=ExtResource( 2 )]
 position = Vector2( -266.872, -169.053 )
 
-[node name="Enemy_Melee5" parent="Enemigos_sala_1" instance=ExtResource( 2 )]
+[node name="Enemy_Melee5" parent="RoomManager_1" instance=ExtResource( 2 )]
 position = Vector2( 481.585, -108.411 )
 
-[node name="Enemy_Melee6" parent="Enemigos_sala_1" instance=ExtResource( 2 )]
+[node name="Enemy_Melee6" parent="RoomManager_1" instance=ExtResource( 2 )]
 position = Vector2( 1119.19, -180.342 )
 
-[node name="Enemigos_sala_2" type="Node" parent="."]
+[node name="Puerta" parent="RoomManager_1" instance=ExtResource( 8 )]
+position = Vector2( 479.553, -303.85 )
+
+[node name="Puerta2" parent="RoomManager_1" instance=ExtResource( 8 )]
+position = Vector2( 1392.18, 608.536 )
+rotation = 1.5708
+
+[node name="RoomManager_2" type="Node" parent="."]
 script = ExtResource( 7 )
 
-[node name="Enemy_Melee" parent="Enemigos_sala_2" instance=ExtResource( 2 )]
+[node name="Enemy_Melee" parent="RoomManager_2" instance=ExtResource( 2 )]
 position = Vector2( -268.945, -1178.87 )
 
-[node name="Enemy_Melee7" parent="Enemigos_sala_2" instance=ExtResource( 2 )]
+[node name="Enemy_Melee7" parent="RoomManager_2" instance=ExtResource( 2 )]
 position = Vector2( 61.109, -1502.16 )
 
-[node name="Enemy_Melee8" parent="Enemigos_sala_2" instance=ExtResource( 2 )]
+[node name="Enemy_Melee8" parent="RoomManager_2" instance=ExtResource( 2 )]
 position = Vector2( 891.099, -1462.26 )
 
-[node name="Enemy_Melee9" parent="Enemigos_sala_2" instance=ExtResource( 2 )]
+[node name="Enemy_Melee9" parent="RoomManager_2" instance=ExtResource( 2 )]
 position = Vector2( 1315.24, -929.259 )
 
-[node name="Enemy_Melee2" parent="Enemigos_sala_2" instance=ExtResource( 2 )]
+[node name="Enemy_Melee2" parent="RoomManager_2" instance=ExtResource( 2 )]
 position = Vector2( 1202.03, -1893.57 )
 
-[node name="Enemy_Melee3" parent="Enemigos_sala_2" instance=ExtResource( 2 )]
+[node name="Enemy_Melee3" parent="RoomManager_2" instance=ExtResource( 2 )]
 position = Vector2( -315.851, -1731.17 )
 
-[node name="Enemy_Melee4" parent="Enemigos_sala_2" instance=ExtResource( 2 )]
+[node name="Enemy_Melee4" parent="RoomManager_2" instance=ExtResource( 2 )]
 position = Vector2( -282.872, -2281.05 )
 
-[node name="Enemy_Melee5" parent="Enemigos_sala_2" instance=ExtResource( 2 )]
+[node name="Enemy_Melee5" parent="RoomManager_2" instance=ExtResource( 2 )]
 position = Vector2( 475.585, -2218.41 )
 
-[node name="Enemy_Melee6" parent="Enemigos_sala_2" instance=ExtResource( 2 )]
+[node name="Enemy_Melee6" parent="RoomManager_2" instance=ExtResource( 2 )]
 position = Vector2( 1113.19, -2290.34 )
+
+[node name="Puerta" parent="RoomManager_2" instance=ExtResource( 8 )]
+position = Vector2( 480.695, -846.822 )
+rotation = 3.14159
+
+[node name="Puerta2" parent="RoomManager_2" instance=ExtResource( 8 )]
+position = Vector2( 479.196, -2352.07 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -1
@@ -126,17 +140,3 @@ tile_data = PoolIntArray( -6488055, 0, 0, -6488054, 0, 0, -6488053, 0, 0, -64880
 [node name="CrossAir" type="Node" parent="."]
 script = ExtResource( 5 )
 crossAir = ExtResource( 6 )
-
-[node name="Puerta" parent="." instance=ExtResource( 8 )]
-position = Vector2( 479.553, -303.85 )
-
-[node name="Puerta2" parent="." instance=ExtResource( 8 )]
-position = Vector2( 1392.18, 608.536 )
-rotation = 1.5708
-
-[node name="Puerta3" parent="." instance=ExtResource( 8 )]
-position = Vector2( 480.695, -846.822 )
-rotation = 3.14159
-
-[node name="Puerta4" parent="." instance=ExtResource( 8 )]
-position = Vector2( 479.196, -2352.07 )

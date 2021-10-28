@@ -12,14 +12,7 @@ var motion = Vector2()
 
 func _physics_process(delta):
 	if target != null:
-		if target.is_in_group("player"):
-		
-			position += (target.position - position) / 50
-			look_at(target.global_position)
-			move_and_collide(motion)
-			
-		else:
-			target = target
+		_follow_player()
 
 
 func hit():
@@ -28,14 +21,18 @@ func hit():
 
 
 func _on_Area2D_body_entered(body):
-	target = body
+	if body.is_in_group("player"):
+		target = body
 
 
 
 func _on_Area2D_body_exited(body):
 	target = null 
 
-
+func _follow_player():
+	position += (target.position - position) / 50
+	look_at(target.global_position)
+	move_and_collide(motion)
 
 func _on_HitPlayer_body_entered(body):
 	if body.has_method("notify_hit"):
