@@ -6,6 +6,7 @@ signal health_update()
 export (float) var speed = 500
 export (PackedScene) var bullet:PackedScene
 export (int) var max_health = 20
+export (int) var damage = 1
 
 var max_speed = 400
 var acceleration = 1000
@@ -62,7 +63,7 @@ func applymovement(acceletarion):
 
 func fire():
 	var bullet_instance = bullet.instance()
-	bullet_instance.initialize(self.rotation,bullet_spawn.get_global_position(), global_position.direction_to(bullet_spawn.global_position))
+	bullet_instance.initialize(self.rotation,bullet_spawn.get_global_position(), global_position.direction_to(bullet_spawn.global_position), damage)
 	get_tree().get_root().call_deferred("add_child",bullet_instance)
 
 func kill():
