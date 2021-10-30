@@ -9,7 +9,9 @@ extents = Vector2( 16.086, 16.16 )
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 16.0802, 50.3518 )
 
-[node name="Puerta" type="Sprite"]
+[node name="Puerta" type="Sprite" groups=[
+"puerta",
+]]
 position = Vector2( 438.992, -302.34 )
 scale = Vector2( 4, 1 )
 texture = ExtResource( 1 )

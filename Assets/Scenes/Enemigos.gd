@@ -1,11 +1,39 @@
 extends Node
 
-onready var puerta_1 = $Puerta
-onready var puerta_2 = $Puerta2
+signal abrir
+
+var enemigos = 0
+
+func _ready():
+	for c in get_children():
+		if c.is_in_group("enemy"):
+			enemigos+=1
+			c.connect("death",self,"decrementar")
+		if c.is_in_group("puerta"):
+			self.connect("abrir", c, "abrir_self")
+
+func decrementar():
+	enemigos-=1
+	if enemigos <= 0:
+		emit_signal("abrir")
+
+
+func _abrir_puertas():
+	for c in get_children():
+		if c.is_in_group("puerta"):
+			print("puertas abiertas")
 
 
 
-func _physics_process(delta):
-	if get_children().size() <=2:
-		puerta_1.abrir()
-		puerta_2.abrir()
+
+
+
+
+
+
+
+
+
+
+
+

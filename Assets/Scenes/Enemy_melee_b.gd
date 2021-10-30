@@ -2,7 +2,7 @@ extends KinematicBody2D
 class_name Enemy
 
 onready var ia = $IA
-
+signal death
 
 export (int) var vida = 3
 export (int) var dmg = 1
@@ -14,6 +14,7 @@ var can_damage = false
 func _physics_process(delta):
 	if vida <= 0:
 		queue_free()
+		emit_signal("death")
 	if can_damage and ia.target != null:
 		ia.target.notify_hit(-dmg)
 

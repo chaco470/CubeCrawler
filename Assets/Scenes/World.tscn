@@ -1,7 +1,6 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Assets/Scenes/Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Assets/Scenes/Enemy_Melee.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Images/Background.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Images/Tile-1-03.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Scripts/CrossAir.gd" type="Script" id=5]
@@ -43,32 +42,29 @@ script = ExtResource( 9 )
 [node name="RoomManager_1" type="Node" parent="."]
 script = ExtResource( 7 )
 
-[node name="Enemy_Melee" parent="RoomManager_1" instance=ExtResource( 2 )]
-position = Vector2( -224.804, 1039.2 )
+[node name="Enemy_melee_b7" parent="RoomManager_1" instance=ExtResource( 10 )]
+position = Vector2( -294.721, -112.784 )
 
-[node name="Enemy_Melee7" parent="RoomManager_1" instance=ExtResource( 2 )]
-position = Vector2( 211.196, 1309.2 )
+[node name="Enemy_melee_b8" parent="RoomManager_1" instance=ExtResource( 10 )]
+position = Vector2( 486.561, -145.541 )
 
-[node name="Enemy_Melee8" parent="RoomManager_1" instance=ExtResource( 2 )]
-position = Vector2( 863.196, 1315.2 )
+[node name="Enemy_melee_b9" parent="RoomManager_1" instance=ExtResource( 10 )]
+position = Vector2( 1253.41, -145.541 )
 
-[node name="Enemy_Melee9" parent="RoomManager_1" instance=ExtResource( 2 )]
-position = Vector2( 1249.2, 975.205 )
+[node name="Enemy_melee_b10" parent="RoomManager_1" instance=ExtResource( 10 )]
+position = Vector2( 1294.71, 602.852 )
 
-[node name="Enemy_Melee2" parent="RoomManager_1" instance=ExtResource( 2 )]
-position = Vector2( 1208.03, 216.426 )
+[node name="Enemy_melee_b11" parent="RoomManager_1" instance=ExtResource( 10 )]
+position = Vector2( 1294.71, 1232.81 )
 
-[node name="Enemy_Melee3" parent="RoomManager_1" instance=ExtResource( 2 )]
-position = Vector2( -309.851, 378.826 )
+[node name="Enemy_melee_b12" parent="RoomManager_1" instance=ExtResource( 10 )]
+position = Vector2( 479.196, 1415.92 )
 
-[node name="Enemy_Melee4" parent="RoomManager_1" instance=ExtResource( 2 )]
-position = Vector2( -266.872, -169.053 )
+[node name="Enemy_melee_b13" parent="RoomManager_1" instance=ExtResource( 10 )]
+position = Vector2( -335.021, 1292.01 )
 
-[node name="Enemy_Melee5" parent="RoomManager_1" instance=ExtResource( 2 )]
-position = Vector2( 481.585, -108.411 )
-
-[node name="Enemy_Melee6" parent="RoomManager_1" instance=ExtResource( 2 )]
-position = Vector2( 1119.19, -180.342 )
+[node name="Enemy_melee_b14" parent="RoomManager_1" instance=ExtResource( 10 )]
+position = Vector2( -346.448, 602.852 )
 
 [node name="Puerta" parent="RoomManager_1" instance=ExtResource( 8 )]
 position = Vector2( 479.553, -303.85 )
@@ -93,10 +89,10 @@ position = Vector2( 1236.93, -1608.55 )
 position = Vector2( -306.148, -1629.9 )
 
 [node name="Enemy_melee_b5" parent="RoomManager_2" instance=ExtResource( 10 )]
-position = Vector2( 75.6157, -2217.23 )
+position = Vector2( 209.167, -1693.1 )
 
 [node name="Enemy_melee_b6" parent="RoomManager_2" instance=ExtResource( 10 )]
-position = Vector2( 884.529, -2219.9 )
+position = Vector2( 1238.01, -2034.56 )
 
 [node name="Puerta" parent="RoomManager_2" instance=ExtResource( 8 )]
 position = Vector2( 480.695, -846.822 )
@@ -121,7 +117,7 @@ __meta__ = {
 }
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 486.561, -930.012 )
+position = Vector2( 480.898, 597.177 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 2 )

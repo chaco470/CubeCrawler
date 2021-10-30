@@ -35,3 +35,8 @@ func _on_Detector_body_entered(body):
 	if body.is_in_group("player"):
 		set_state(State.ENGAGE)
 		target = body
+
+
+func _on_Detector_body_exited(body):
+	set_state(State.PATROL)
+	target = null

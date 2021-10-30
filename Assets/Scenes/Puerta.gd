@@ -2,7 +2,7 @@ extends Sprite
 onready var barrera = $StaticBody2D
 
 
-func abrir():
+func abrir_self():
 	queue_free()
 
 

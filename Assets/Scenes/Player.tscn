@@ -99,4 +99,9 @@ one_shot = true
 anims/hurt_animation = SubResource( 3 )
 anims/rest_animation = SubResource( 4 )
 
+[node name="Cadencia" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
 [connection signal="timeout" from="InvulnerabilityTimer" to="." method="_on_InvulnerabilityTimer_timeout"]
+[connection signal="timeout" from="Cadencia" to="." method="_on_Cadencia_timeout"]

@@ -12,11 +12,13 @@ var max_speed = 400
 var acceleration = 1000
 var motion = Vector2.ZERO
 var axis = Vector2.ZERO
+var can_shoot = true
 
 onready var state_machine = $StateMachine
 onready var bullet_spawn = $BulletSpawn
 onready var invulnerability_timer = $InvulnerabilityTimer
 onready var player_animation = $AnimationPlayer
+onready var cadencia_de_disparo = $Cadencia
 
 func _ready():
 	state_machine.set_parent(self)
@@ -27,7 +29,7 @@ func _physics_process(delta):
 	
 	look_at(get_global_mouse_position())
 	
-	if Input.is_action_just_pressed("LMB"):
+	if Input.is_action_pressed("LMB"):
 		fire()
 
 func get_input_axis():
@@ -62,9 +64,12 @@ func applymovement(acceletarion):
 	
 
 func fire():
-	var bullet_instance = bullet.instance()
-	bullet_instance.initialize(self.rotation,bullet_spawn.get_global_position(), global_position.direction_to(bullet_spawn.global_position), damage)
-	get_tree().get_root().call_deferred("add_child",bullet_instance)
+	if can_shoot:
+		var bullet_instance = bullet.instance()
+		bullet_instance.initialize(self.rotation,bullet_spawn.get_global_position(), global_position.direction_to(bullet_spawn.global_position), damage)
+		get_tree().get_root().call_deferred("add_child",bullet_instance)
+		can_shoot = false
+		cadencia_de_disparo.start()
 
 func kill():
 	get_tree().reload_current_scene()
@@ -81,3 +86,7 @@ func notify_hit(amount):
 
 func _on_InvulnerabilityTimer_timeout():
 	player_animation.play("rest_animation")
+
+
+func _on_Cadencia_timeout():
+	can_shoot = true
