@@ -18,10 +18,16 @@ _global_script_classes=[ {
 "class": "Enemy",
 "language": "GDScript",
 "path": "res://Assets/Scenes/Enemy_melee_b.gd"
+}, {
+"base": "Area2D",
+"class": "EnemyBullet",
+"language": "GDScript",
+"path": "res://Enemy_bullet.gd"
 } ]
 _global_script_class_icons={
 "Bullet": "",
-"Enemy": ""
+"Enemy": "",
+"EnemyBullet": ""
 }
 
 [application]

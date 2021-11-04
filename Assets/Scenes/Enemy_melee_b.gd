@@ -11,6 +11,9 @@ export (float) var velocity = 100
 var motion = Vector2.ZERO
 var can_damage = false
 
+func _ready():
+	ia.initialize(self)
+
 func _physics_process(delta):
 	if vida <= 0:
 		queue_free()

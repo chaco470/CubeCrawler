@@ -39,7 +39,7 @@ func get_input_axis():
 	return axis.normalized()
 
 func _handle_cannon_actions():
-	look_at(get_global_mouse_position())
+	look_at(get_global_mouse_position()* 1.01)
 	
 	if Input.is_action_just_pressed("LMB"):
 		fire()
