@@ -6,7 +6,7 @@ signal death
 
 export (int) var vida = 3
 export (int) var dmg = 1
-export (float) var velocity = 100
+export (float) var velocity = 300
 
 var motion = Vector2.ZERO
 var can_damage = false

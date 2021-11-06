@@ -31,6 +31,8 @@ func _physics_process(delta):
 	
 	if Input.is_action_pressed("LMB"):
 		fire()
+	if Input.is_action_pressed("ui_r"):
+		get_tree().reload_current_scene()
 
 func get_input_axis():
 	

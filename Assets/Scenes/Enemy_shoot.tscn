@@ -32,17 +32,24 @@ shape = SubResource( 2 )
 script = ExtResource( 3 )
 
 [node name="ShootTimer" type="Timer" parent="IA_shooter"]
-wait_time = 0.5
+
+[node name="MoveTimer" type="Timer" parent="IA_shooter"]
+wait_time = 0.2
+one_shot = true
+
+[node name="PatrolTimer" type="Timer" parent="IA_shooter"]
+wait_time = 3.0
 
 [node name="Detector" type="Area2D" parent="IA_shooter"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="IA_shooter/Detector"]
-visible = false
 shape = SubResource( 3 )
 
 [node name="BulletSpawner" type="Position2D" parent="."]
 position = Vector2( 40, 0 )
 
 [connection signal="timeout" from="IA_shooter/ShootTimer" to="IA_shooter" method="_on_ShootTimer_timeout"]
+[connection signal="timeout" from="IA_shooter/MoveTimer" to="IA_shooter" method="_on_MoveTimer_timeout"]
+[connection signal="timeout" from="IA_shooter/PatrolTimer" to="IA_shooter" method="_on_PatrolTimer_timeout"]
 [connection signal="body_entered" from="IA_shooter/Detector" to="IA_shooter" method="_on_Detector_body_entered"]
 [connection signal="body_exited" from="IA_shooter/Detector" to="IA_shooter" method="_on_Detector_body_exited"]

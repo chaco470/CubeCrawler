@@ -21,7 +21,7 @@ func _process(delta):
 
 func _on_Bullet_body_entered(body):
 	if body.has_method("hit"):
-		body.hit(damage)
+		body.hit(-damage)
 	queue_free()
 
 

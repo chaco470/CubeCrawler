@@ -4,7 +4,7 @@ signal death
 
 export (int) var vida = 3
 export (int) var dmg = 1
-export (float) var velocity = 100
+export (float) var velocity = 200
 export (PackedScene) var bullet:PackedScene
 
 var motion = Vector2.ZERO
@@ -29,3 +29,7 @@ func _follow_player(target):
 
 func hit(damage_to_take):
 	vida -= damage_to_take
+
+func _patrullar():
+	pass
+
