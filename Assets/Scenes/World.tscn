@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Assets/Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Scenes/Enemy_shoot.tscn" type="PackedScene" id=2]
@@ -11,6 +11,8 @@
 [ext_resource path="res://Assets/Scenes/World.gd" type="Script" id=9]
 [ext_resource path="res://Assets/Scenes/Enemy_melee_b.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Assets/Scenes/Enemy_bullet.tscn" type="PackedScene" id=11]
+[ext_resource path="res://GUI/GUI_layer.gd" type="Script" id=12]
+[ext_resource path="res://GUI/LifeTexture.tscn" type="PackedScene" id=13]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
@@ -168,3 +170,16 @@ bullet = ExtResource( 11 )
 
 [node name="Enemy_melee_b" parent="." instance=ExtResource( 10 )]
 position = Vector2( 3886.85, -1926.34 )
+
+[node name="GUI" type="CanvasLayer" parent="."]
+script = ExtResource( 12 )
+heart_scene = ExtResource( 13 )
+
+[node name="HeartsContainer" type="GridContainer" parent="GUI"]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_scale = Vector2( 0.5, 0.5 )
+columns = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
