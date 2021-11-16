@@ -67,6 +67,7 @@ func applymovement(acceletarion):
 
 func fire():
 	if can_shoot:
+		GlobalObjects.camera.shake(50)
 		var bullet_instance = bullet.instance()
 		bullet_instance.initialize(self.rotation,bullet_spawn.get_global_position(), global_position.direction_to(bullet_spawn.global_position), damage)
 		get_tree().get_root().call_deferred("add_child",bullet_instance)
@@ -81,9 +82,6 @@ func notify_hit(amount):
 		state_machine.notify_hit(amount)
 		invulnerability_timer.start()
 		player_animation.queue("hurt_animation")
-
-
-
 
 
 func _on_InvulnerabilityTimer_timeout():

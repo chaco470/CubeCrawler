@@ -1,6 +1,6 @@
 extends Area2D
 class_name EnemyBullet
-export (float) var bullet_speed = 1000
+var bullet_speed = 1000
 var damage
 var degree
 
@@ -8,11 +8,12 @@ var degree
 func _ready():
 	pass
 	
-func initialize(rotation_given,spawn_position:Vector2, degree:Vector2, damage_to_make):
+func initialize(rotation_given,spawn_position:Vector2, degree:Vector2, damage_to_make, bullet_speed_given):
 	self.degree = degree
 	self.rotation = rotation_given
 	global_position = spawn_position
 	damage = damage_to_make
+	bullet_speed = bullet_speed_given
 	
 	
 
