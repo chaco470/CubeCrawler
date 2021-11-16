@@ -35,7 +35,7 @@ script = ExtResource( 3 )
 
 [node name="ExplotionTimer" type="Timer" parent="IA"]
 
-[node name="ExplotionWhaitTimer" type="Timer" parent="IA"]
+[node name="ExplotionWaitTimer" type="Timer" parent="IA"]
 wait_time = 0.3
 
 [node name="Detector" type="Area2D" parent="IA"]
@@ -46,6 +46,6 @@ shape = SubResource( 3 )
 [connection signal="body_entered" from="ExplotionRadio" to="." method="_on_ExplotionRadio_body_entered"]
 [connection signal="body_exited" from="ExplotionRadio" to="." method="_on_ExplotionRadio_body_exited"]
 [connection signal="timeout" from="IA/ExplotionTimer" to="IA" method="_on_ExplotionTimer_timeout"]
-[connection signal="timeout" from="IA/ExplotionWhaitTimer" to="IA" method="_on_ExplotionWhaitTimer_timeout"]
+[connection signal="timeout" from="IA/ExplotionWaitTimer" to="IA" method="_on_ExplotionWhaitTimer_timeout"]
 [connection signal="body_entered" from="IA/Detector" to="IA" method="_on_Detector_body_entered"]
 [connection signal="body_exited" from="IA/Detector" to="IA" method="_on_Detector_body_exited"]

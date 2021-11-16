@@ -6,13 +6,12 @@ var parent = null
 
 enum State{
 	PATROL,
-	ENGAGE,
-	EXPLOTE
+	ENGAGE
 }
 
 onready var player_detector = $Detector
 onready var explotion_timer = $ExplotionTimer
-onready var explotion_whait_timer = $ExplotionWhaitTimer
+onready var explotion_wait_timer = $ExplotionWaitTimer
 
 var current_state = State.PATROL setget set_state
 var target = null
@@ -27,8 +26,6 @@ func _physics_process(delta):
 		State.ENGAGE:
 			if target != null:
 				parent._follow_player(target)
-		State.EXPLOTE:
-			explotion_whait_timer.start()
 		_:
 			print("Error: no se wacho")
 
@@ -51,10 +48,13 @@ func _on_Detector_body_exited(body):
 	if body.is_in_group("player"):
 		set_state(State.PATROL)
 		target = null
+		explotion_timer.stop()
+		explotion_timer.wait_time = 1
 
 
 func _on_ExplotionTimer_timeout():
-	set_state(State.EXPLOTE)
+	set_state(State.PATROL)
+	explotion_wait_timer.start()
 
 
 func _on_ExplotionWhaitTimer_timeout():

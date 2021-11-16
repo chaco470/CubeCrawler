@@ -9,6 +9,7 @@ export (float) var velocity = 300
 
 var motion = Vector2.ZERO
 var can_damage = false
+var explode_damage = false
 
 func _ready():
 	ia.initialize(self)
@@ -27,8 +28,9 @@ func _follow_player(target):
 	motion = move_and_slide(motion)
 
 func _explode():
-	if can_damage and ia.target != null:
-		ia.target.notify_hit(-dmg)
+		GlobalObjects.camera.shake(100)
+		if can_damage and ia.target != null:
+			ia.target.notify_hit(-dmg)
 		queue_free()
 
 func _on_ExplotionRadio_body_entered(body):

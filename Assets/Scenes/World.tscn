@@ -113,7 +113,7 @@ __meta__ = {
 }
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 3262.99, -1598.14 )
+position = Vector2( 3241.89, -1402.75 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 2 )
@@ -126,10 +126,10 @@ script = ExtResource( 5 )
 crossAir = ExtResource( 6 )
 
 [node name="Enemy_shoot" parent="." instance=ExtResource( 2 )]
-position = Vector2( 2641.04, -1267.91 )
+position = Vector2( 2472.78, -2109.23 )
 
 [node name="Enemy_melee_b" parent="." instance=ExtResource( 10 )]
 position = Vector2( 3886.85, -1926.34 )
 
 [node name="Enemy_explotion" parent="." instance=ExtResource( 11 )]
-position = Vector2( 2474.6, -2122.77 )
+position = Vector2( 2604.77, -1329.07 )
