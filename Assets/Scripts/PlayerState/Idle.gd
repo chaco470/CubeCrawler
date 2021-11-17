@@ -7,7 +7,6 @@ func handle_input(event:InputEvent):
 
 
 func update(delta:float):
-	
 	parent._handle_cannon_actions()
-
+	
 	

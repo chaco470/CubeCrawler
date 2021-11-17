@@ -25,14 +25,6 @@ func _ready():
 	PlayerData.call_deferred("set_max_health", max_health)
 
 
-func _physics_process(delta):
-	
-	look_at(get_global_mouse_position())
-	
-	if Input.is_action_pressed("LMB"):
-		fire()
-	if Input.is_action_pressed("ui_r"):
-		get_tree().reload_current_scene()
 
 func get_input_axis():
 	
@@ -65,6 +57,7 @@ func applymovement(acceletarion):
 	motion = motion.clamped(max_speed)
 	
 
+
 func fire():
 	if can_shoot:
 		GlobalObjects.camera.shake(50)
@@ -90,3 +83,6 @@ func _on_InvulnerabilityTimer_timeout():
 
 func _on_Cadencia_timeout():
 	can_shoot = true
+
+func _remove():
+	queue_free()
