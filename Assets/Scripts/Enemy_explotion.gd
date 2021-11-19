@@ -33,9 +33,10 @@ func _remove():
 	queue_free()
 
 func _follow_player(target):
-	motion = position.direction_to(target.position) * velocity
-	look_at(target.global_position)
-	motion = move_and_slide(motion)
+	if target != null:
+		motion = position.direction_to(target.position) * velocity
+		look_at(target.global_position)
+		motion = move_and_slide(motion)
 
 func _explode():
 		GlobalObjects.camera.shake(100)
