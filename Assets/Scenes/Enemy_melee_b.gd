@@ -1,7 +1,8 @@
 extends KinematicBody2D
 class_name Enemy
+signal death
 onready var ia = $IA
-export (int) var vida = 3
+export (int) var vida = 1
 export (int) var dmg = 1
 export (float) var velocity = 300
 onready var state_machine = $StateMachine
@@ -13,6 +14,7 @@ func _ready():
 	ia.initialize(self)
 
 func _remove():
+	emit_signal("death")
 	queue_free()
 	
 func _demage():

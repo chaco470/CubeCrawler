@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-
+signal death
 
 export (int) var vida = 3
 export (int) var dmg = 1
@@ -33,6 +33,7 @@ func _follow_player(target):
 		motion = move_and_slide(motion)
 		
 func _remove():
+	emit_signal("death")
 	queue_free()
 
 func hit(damage_to_take):

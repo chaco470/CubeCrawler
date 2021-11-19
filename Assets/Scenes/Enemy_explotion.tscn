@@ -9,7 +9,7 @@
 [ext_resource path="res://Assets/Scripts/DeadEnemyExplotion.gd" type="Script" id=7]
 [ext_resource path="res://Assets/Scripts/Explote.gd" type="Script" id=8]
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=1]
 resource_name = "Explote"
 loop = true
 tracks/0/type = "value"
@@ -37,7 +37,7 @@ tracks/1/keys = {
 "values": [  ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=2]
 resource_name = "Explote2"
 step = 0.5
 tracks/0/type = "method"
@@ -75,13 +75,13 @@ tracks/2/keys = {
 "values": [ Vector2( 1, 1 ), Vector2( 4, 4 ) ]
 }
 
-[sub_resource type="CircleShape2D" id=1]
+[sub_resource type="CircleShape2D" id=3]
 radius = 32.0
 
-[sub_resource type="CircleShape2D" id=2]
+[sub_resource type="CircleShape2D" id=4]
 radius = 320.0
 
-[sub_resource type="CircleShape2D" id=3]
+[sub_resource type="CircleShape2D" id=5]
 radius = 448.0
 
 [node name="Enemy_explotion" type="KinematicBody2D" groups=[
@@ -91,8 +91,8 @@ script = ExtResource( 2 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Explote"
-anims/Explote = SubResource( 4 )
-anims/Explote2 = SubResource( 5 )
+anims/Explote = SubResource( 1 )
+anims/Explote2 = SubResource( 2 )
 
 [node name="StateMachine" type="Node" parent="."]
 script = ExtResource( 4 )
@@ -116,14 +116,14 @@ texture = ExtResource( 1 )
 
 [node name="EnemyCollider" type="CollisionShape2D" parent="."]
 visible = false
-shape = SubResource( 1 )
+shape = SubResource( 3 )
 
 [node name="ExplotionRadio" type="Area2D" parent="."]
 visible = false
 
 [node name="ExplotionRadius" type="CollisionShape2D" parent="ExplotionRadio"]
 visible = false
-shape = SubResource( 2 )
+shape = SubResource( 4 )
 
 [node name="IA" type="Node2D" parent="."]
 script = ExtResource( 3 )
@@ -136,7 +136,7 @@ wait_time = 0.5
 [node name="Detector" type="Area2D" parent="IA"]
 
 [node name="DetectorShape" type="CollisionShape2D" parent="IA/Detector"]
-shape = SubResource( 3 )
+shape = SubResource( 5 )
 
 [connection signal="body_entered" from="ExplotionRadio" to="." method="_on_ExplotionRadio_body_entered"]
 [connection signal="body_exited" from="ExplotionRadio" to="." method="_on_ExplotionRadio_body_exited"]

@@ -1,7 +1,6 @@
 extends KinematicBody2D
-
-onready var ia = $IA
 signal death
+onready var ia = $IA
 onready var player_animation = $AnimationPlayer
 export (int) var vida = 3
 export (int) var dmg = 1
@@ -28,9 +27,11 @@ func _play_animation(animation_name:String, should_restart:bool = true, playback
 
 func hit(damage_to_take):
 	vida -= damage_to_take
+
 func _remove():
+	emit_signal("death")
 	queue_free()
-	
+
 func _follow_player(target):
 	motion = position.direction_to(target.position) * velocity
 	look_at(target.global_position)

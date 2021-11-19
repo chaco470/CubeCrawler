@@ -19,17 +19,16 @@ onready var bullet_spawn = $BulletSpawn
 onready var invulnerability_timer = $InvulnerabilityTimer
 onready var player_animation = $AnimationPlayer
 onready var cadencia_de_disparo = $Cadencia
+onready var sprite = $Sprite
 
 func _ready():
 	state_machine.set_parent(self)
 	PlayerData.call_deferred("set_max_health", max_health)
 
-func _process(delta):
-	if Input.is_action_just_pressed("ui_cancel"):
-		get_tree().change_scene("res://GUI/MainMenu.tscn")
+
 
 func get_input_axis():
-
+	
 	axis.x = int(Input.is_action_pressed("_rigth")) - int(Input.is_action_pressed("_left"))
 	axis.y = int(Input.is_action_pressed("_down")) - int(Input.is_action_pressed("_up"))
 	return axis.normalized()
@@ -88,3 +87,18 @@ func _on_Cadencia_timeout():
 
 func _remove():
 	queue_free()
+
+
+func handle_pick_stat(statToAdd):
+	match statToAdd.kind:
+		"stats":
+			max_speed *= statToAdd.max_speed_boost
+			cadencia_de_disparo.wait_time *= statToAdd.cadencia_disparo
+			PlayerData.max_health += statToAdd.health_to_add
+			sprite.scale.x *= statToAdd.size
+			sprite.scale.y *= statToAdd.size
+		_:
+			pass
+
+
+

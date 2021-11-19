@@ -1,0 +1,104 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Assets/Images/Tile-G-Room3-04-03-02.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Scenes/SpeedUp.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Scenes/Puerta.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/Scenes/SizeDown.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/Scripts/ItemSpawner.gd" type="Script" id=5]
+[ext_resource path="res://Assets/Scenes/HealthUp.tscn" type="PackedScene" id=6]
+
+[sub_resource type="NavigationPolygon" id=1]
+vertices = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+
+[sub_resource type="OccluderPolygon2D" id=2]
+polygon = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=3]
+points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
+
+[sub_resource type="NavigationPolygon" id=4]
+vertices = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+
+[sub_resource type="OccluderPolygon2D" id=5]
+polygon = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=6]
+points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
+
+[sub_resource type="TileSet" id=7]
+0/name = "Tile-G-Room3-04-03-02.png 0"
+0/texture = ExtResource( 1 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 32, 32, 32, 32 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/occluder = SubResource( 2 )
+0/navigation_offset = Vector2( 0, 0 )
+0/navigation = SubResource( 1 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 3 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 3 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+1/name = "Tile-G-Room3-04-03-02.png 1"
+1/texture = ExtResource( 1 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 0, 0, 32, 32 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/occluder = SubResource( 5 )
+1/navigation_offset = Vector2( 0, 0 )
+1/navigation = SubResource( 4 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape = SubResource( 6 )
+1/shape_one_way = false
+1/shape_one_way_margin = 1.0
+1/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 6 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+1/z_index = 0
+
+[sub_resource type="CircleShape2D" id=8]
+radius = 8.0
+
+[node name="GoldenRoom" type="Node"]
+
+[node name="Puerta" parent="." instance=ExtResource( 3 )]
+position = Vector2( 608.038, 1200.21 )
+rotation = 3.14159
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource( 7 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 0, 1, 0, 1, 1, 0, 2, 1, 0, 3, 1, 0, 4, 1, 0, 5, 1, 0, 6, 1, 0, 7, 1, 0, 8, 1, 0, 9, 1, 0, 10, 1, 0, 11, 1, 0, 12, 1, 0, 13, 1, 0, 14, 1, 0, 15, 1, 0, 16, 1, 0, 17, 1, 0, 18, 1, 0, 19, 1, 0, 20, 1, 0, 21, 1, 0, 22, 1, 0, 23, 1, 0, 24, 1, 0, 25, 1, 0, 26, 1, 0, 27, 1, 0, 28, 1, 0, 29, 1, 0, 30, 1, 0, 31, 1, 0, 32, 1, 0, 33, 1, 0, 34, 1, 0, 35, 1, 0, 36, 1, 0, 37, 1, 0, 65536, 1, 0, 65537, 1, 0, 65538, 1, 0, 65539, 1, 0, 65570, 1, 0, 65571, 1, 0, 65572, 1, 0, 65573, 1, 0, 131072, 1, 0, 131073, 1, 0, 131074, 1, 0, 131075, 1, 0, 131106, 1, 0, 131107, 1, 0, 131108, 1, 0, 131109, 1, 0, 196608, 1, 0, 196609, 1, 0, 196610, 1, 0, 196611, 1, 0, 196642, 1, 0, 196643, 1, 0, 196644, 1, 0, 196645, 1, 0, 262144, 1, 0, 262181, 1, 0, 327680, 1, 0, 327692, 1, 0, 327693, 1, 0, 327694, 1, 0, 327703, 1, 0, 327704, 1, 0, 327705, 1, 0, 327717, 1, 0, 393216, 1, 0, 393228, 1, 0, 393229, 1, 0, 393230, 1, 0, 393231, 1, 0, 393232, 1, 0, 393233, 1, 0, 393234, 1, 0, 393235, 1, 0, 393236, 1, 0, 393237, 1, 0, 393238, 1, 0, 393239, 1, 0, 393240, 1, 0, 393241, 1, 0, 393253, 1, 0, 458752, 1, 0, 458764, 1, 0, 458765, 1, 0, 458766, 1, 0, 458775, 1, 0, 458776, 1, 0, 458777, 1, 0, 458789, 1, 0, 524288, 1, 0, 524301, 1, 0, 524312, 1, 0, 524325, 1, 0, 589824, 1, 0, 589837, 1, 0, 589848, 1, 0, 589861, 1, 0, 655360, 1, 0, 655373, 1, 0, 655384, 1, 0, 655397, 1, 0, 720896, 1, 0, 720909, 1, 0, 720920, 1, 0, 720933, 1, 0, 786432, 1, 0, 786445, 1, 0, 786446, 1, 0, 786455, 1, 0, 786456, 1, 0, 786469, 1, 0, 851968, 1, 0, 851982, 1, 0, 851991, 1, 0, 852005, 1, 0, 917504, 1, 0, 917541, 1, 0, 983040, 1, 0, 983077, 1, 0, 1048576, 1, 0, 1048613, 1, 0, 1114112, 1, 0, 1114149, 1, 0, 1179648, 1, 0, 1179685, 1, 0, 1245184, 1, 0, 1245221, 1, 0, 1310720, 1, 0, 1310757, 1, 0, 1376256, 1, 0, 1376293, 1, 0, 1441792, 1, 0, 1441829, 1, 0, 1507328, 1, 0, 1507365, 1, 0, 1572864, 1, 0, 1572901, 1, 0, 1638400, 1, 0, 1638437, 1, 0, 1703936, 1, 0, 1703973, 1, 0, 1769472, 1, 0, 1769509, 1, 0, 1835008, 1, 0, 1835045, 1, 0, 1900544, 1, 0, 1900581, 1, 0, 1966080, 1, 0, 1966117, 1, 0, 2031616, 1, 0, 2031653, 1, 0, 2097152, 1, 0, 2097189, 1, 0, 2162688, 1, 0, 2162725, 1, 0, 2228224, 1, 0, 2228225, 1, 0, 2228226, 1, 0, 2228227, 1, 0, 2228258, 1, 0, 2228259, 1, 0, 2228260, 1, 0, 2228261, 1, 0, 2293760, 1, 0, 2293761, 1, 0, 2293762, 1, 0, 2293763, 1, 0, 2293794, 1, 0, 2293795, 1, 0, 2293796, 1, 0, 2293797, 1, 0, 2359296, 1, 0, 2359297, 1, 0, 2359298, 1, 0, 2359299, 1, 0, 2359330, 1, 0, 2359331, 1, 0, 2359332, 1, 0, 2359333, 1, 0, 2424832, 1, 0, 2424833, 1, 0, 2424834, 1, 0, 2424835, 1, 0, 2424836, 1, 0, 2424837, 1, 0, 2424838, 1, 0, 2424839, 1, 0, 2424840, 1, 0, 2424841, 1, 0, 2424842, 1, 0, 2424843, 1, 0, 2424844, 1, 0, 2424845, 1, 0, 2424846, 1, 0, 2424847, 1, 0, 2424848, 1, 0, 2424853, 1, 0, 2424854, 1, 0, 2424855, 1, 0, 2424856, 1, 0, 2424857, 1, 0, 2424858, 1, 0, 2424859, 1, 0, 2424860, 1, 0, 2424861, 1, 0, 2424862, 1, 0, 2424863, 1, 0, 2424864, 1, 0, 2424865, 1, 0, 2424866, 1, 0, 2424867, 1, 0, 2424868, 1, 0, 2424869, 1, 0 )
+
+[node name="ItemSpawner" type="Node" parent="."]
+script = ExtResource( 5 )
+items = [ ExtResource( 2 ), ExtResource( 4 ), ExtResource( 6 ) ]
+
+[node name="Area2D" type="Area2D" parent="ItemSpawner"]
+position = Vector2( 608, 320 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ItemSpawner/Area2D"]
+shape = SubResource( 8 )
+
+[node name="Position2D" type="Position2D" parent="ItemSpawner"]
+position = Vector2( 608, 320 )
