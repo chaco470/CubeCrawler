@@ -1,5 +1,4 @@
 extends "res://Assets/Scripts/AbstractStateMachine.gd"
-signal memori
 
 func _ready():
 	states_map = {
@@ -8,10 +7,6 @@ func _ready():
 		"engage": $Engage,
 		"explote": $Explote
 	}
-	for c in get_children():
-		c.connect("death", self, "estoy_muerto")
-
 
 		
-func estoy_muerto():
-	emit_signal("memori")
+
