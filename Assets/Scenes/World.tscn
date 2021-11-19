@@ -50,7 +50,7 @@ script = ExtResource( 9 )
 script = ExtResource( 7 )
 
 [node name="Enemy_melee_b" parent="RoomManager_2" instance=ExtResource( 10 )]
-position = Vector2( -294.721, -919.133 )
+position = Vector2( 3265.07, -1537.86 )
 
 [node name="Enemy_melee_b2" parent="RoomManager_2" instance=ExtResource( 10 )]
 position = Vector2( 1279.64, -906.42 )
@@ -115,7 +115,7 @@ __meta__ = {
 }
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 608.611, 516.011 )
+position = Vector2( 3139.24, -968.119 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 2 )
