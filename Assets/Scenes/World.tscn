@@ -82,10 +82,10 @@ position = Vector2( -95.8891, -3343.62 )
 rotation = 3.14159
 
 [node name="Enemy_shoot2" parent="RoomManager_3" instance=ExtResource( 2 )]
-position = Vector2( -749.381, -3796.07 )
+position = Vector2( 3917.22, -1008.92 )
 
 [node name="Enemy_shoot3" parent="RoomManager_3" instance=ExtResource( 2 )]
-position = Vector2( -742.654, -4229.98 )
+position = Vector2( -753.333, -4390.16 )
 
 [node name="Enemy_shoot4" parent="RoomManager_3" instance=ExtResource( 2 )]
 position = Vector2( -742.654, -4734.2 )
@@ -115,7 +115,7 @@ __meta__ = {
 }
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 3241.89, -1402.75 )
+position = Vector2( 608.611, 516.011 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 2 )
