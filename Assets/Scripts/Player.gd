@@ -24,10 +24,12 @@ func _ready():
 	state_machine.set_parent(self)
 	PlayerData.call_deferred("set_max_health", max_health)
 
-
+func _process(delta):
+	if Input.is_action_just_pressed("ui_cancel"):
+		get_tree().change_scene("res://GUI/MainMenu.tscn")
 
 func get_input_axis():
-	
+
 	axis.x = int(Input.is_action_pressed("_rigth")) - int(Input.is_action_pressed("_left"))
 	axis.y = int(Input.is_action_pressed("_down")) - int(Input.is_action_pressed("_up"))
 	return axis.normalized()
