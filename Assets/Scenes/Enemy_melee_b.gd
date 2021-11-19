@@ -1,9 +1,6 @@
 extends KinematicBody2D
 class_name Enemy
-
 onready var ia = $IA
-signal death
-
 export (int) var vida = 3
 export (int) var dmg = 1
 export (float) var velocity = 300
@@ -26,9 +23,10 @@ func hit(damage_to_take):
 	vida -= damage_to_take
 
 func _follow_player(target):
-	motion = position.direction_to(target.position) * velocity
-	look_at(target.global_position)
-	motion = move_and_slide(motion)
+	if target != null:
+		motion = position.direction_to(target.position) * velocity
+		look_at(target.global_position)
+		motion = move_and_slide(motion)
 
 
 func _on_HitBox_body_entered(body):
