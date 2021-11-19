@@ -68,7 +68,7 @@ position = Vector2( 40, -24 )
 position = Vector2( 152, 552 )
 
 [node name="Enemy_melee_b3" parent="." instance=ExtResource( 3 )]
-position = Vector2( 40, -24 )
+position = Vector2( 272, 368 )
 
 [node name="Enemy_melee_b2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 896, 1024 )
@@ -83,4 +83,4 @@ position = Vector2( 104, 1088 )
 position = Vector2( 1232, -208 )
 
 [node name="Enemy_shoot4" parent="." instance=ExtResource( 4 )]
-position = Vector2( 104, 1088 )
+position = Vector2( 528, 880 )

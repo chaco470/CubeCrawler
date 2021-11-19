@@ -1,8 +1,7 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Assets/Images/Tile-G-Room3-04-03-02.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Scenes/SpeedUp.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Assets/Scenes/Puerta.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/Scenes/SizeDown.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/Scripts/ItemSpawner.gd" type="Script" id=5]
 [ext_resource path="res://Assets/Scenes/HealthUp.tscn" type="PackedScene" id=6]
@@ -79,10 +78,6 @@ points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
 radius = 8.0
 
 [node name="GoldenRoom" type="Node"]
-
-[node name="Puerta" parent="." instance=ExtResource( 3 )]
-position = Vector2( 608.038, 1200.21 )
-rotation = 3.14159
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 7 )

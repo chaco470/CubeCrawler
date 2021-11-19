@@ -5,7 +5,7 @@
 [ext_resource path="res://Assets/Images/Background.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Images/Tile-1-03.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Scripts/CrossAir.gd" type="Script" id=5]
-[ext_resource path="res://Assets/Images/CrossAir-04.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Images/CrossAir-04b.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Scenes/Enemigos.gd" type="Script" id=7]
 [ext_resource path="res://Assets/Scenes/Puerta.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Assets/Scenes/Enemy_melee_b.tscn" type="PackedScene" id=10]
@@ -85,10 +85,7 @@ position = Vector2( 2632, 1088 )
 
 [node name="GoldenRoom" parent="." instance=ExtResource( 15 )]
 
-[node name="Puerta" parent="GoldenRoom" index="0"]
-position = Vector2( 3008.04, -687.79 )
-
-[node name="TileMap" parent="GoldenRoom" index="1"]
+[node name="TileMap" parent="GoldenRoom" index="0"]
 position = Vector2( 2400, -1888 )
 
 [node name="Area2D" parent="GoldenRoom/ItemSpawner" index="0"]
