@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 onready var ia = $IA
 signal death
-
+onready var player_animation = $AnimationPlayer
 export (int) var vida = 3
 export (int) var dmg = 1
 export (float) var velocity = 300
@@ -14,7 +14,17 @@ var explode_damage = false
 func _ready():
 	state_machine.set_parent(self)
 	ia.initialize(self)
-	
+
+func _is_animation_playing(animation_name:String)->bool:
+	return player_animation.current_animation == animation_name && player_animation.is_playing()
+
+
+func _play_animation(animation_name:String, should_restart:bool = true, playback_speed:float = 1.0):
+	if player_animation.has_animation(animation_name):
+		if should_restart:
+			player_animation.stop()
+		player_animation.playback_speed = playback_speed
+		player_animation.play(animation_name)
 
 func hit(damage_to_take):
 	vida -= damage_to_take

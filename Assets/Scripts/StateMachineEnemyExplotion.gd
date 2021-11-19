@@ -6,6 +6,6 @@ func _ready():
 		"patrol": $Patrol,
 		"dead": $Dead,
 		"engage": $Engage,
-		"stopmove": $topMove
+		"explote": $Explote
 	}
 

@@ -19,7 +19,6 @@ extents = Vector2( 34.068, 30.8003 )
 [sub_resource type="Animation" id=3]
 resource_name = "hurt_animation"
 length = 0.2
-loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:visible")
 tracks/0/interp = 1

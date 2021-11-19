@@ -7,4 +7,7 @@ func update(delta):
 		emit_signal("finished", "dead")
 	if !parent.ia.stopEngage:
 		parent.ia._on_Engage()
+	else:
+		emit_signal("finished", "explote")
+		
 	
