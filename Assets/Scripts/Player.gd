@@ -97,7 +97,7 @@ func handle_pick_stat(statToAdd):
 		"stats":
 			max_speed *= statToAdd.max_speed_boost
 			cadencia_de_disparo.wait_time *= statToAdd.cadencia_disparo
-			PlayerData.max_health += statToAdd.health_to_add
+			PlayerData.set_current_health(PlayerData.current_health + statToAdd.health_to_add)
 			sprite.scale.x *= statToAdd.size
 			sprite.scale.y *= statToAdd.size
 		_:
