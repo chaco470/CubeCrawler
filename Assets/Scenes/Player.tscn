@@ -80,7 +80,7 @@ position = Vector2( -21.1636, 1.90735e-06 )
 shape = SubResource( 2 )
 
 [node name="BulletSpawn" type="Position2D" parent="."]
-position = Vector2( 60, 0 )
+position = Vector2( 45.6059, -0.23597 )
 
 [node name="CameraPlayer" type="Camera2D" parent="."]
 current = true
@@ -93,6 +93,7 @@ script = ExtResource( 8 )
 [node name="Tween" type="Tween" parent="CameraPlayer"]
 
 [node name="Light2D" type="Light2D" parent="."]
+visible = false
 position = Vector2( 1.88773, 0 )
 scale = Vector2( 1.49406, 1 )
 texture = ExtResource( 4 )

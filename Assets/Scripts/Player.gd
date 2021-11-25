@@ -5,7 +5,7 @@ signal health_update()
 
 export (float) var speed = 500
 export (PackedScene) var bullet:PackedScene
-export (int) var max_health = 20
+export (int) var max_health = 4
 export (int) var damage = 1
 
 var max_speed = 400
@@ -34,9 +34,9 @@ func get_input_axis():
 	return axis.normalized()
 
 func _handle_cannon_actions():
-	look_at(get_global_mouse_position()* 1.01)
+	look_at(get_global_mouse_position())
 	
-	if Input.is_action_just_pressed("LMB"):
+	if Input.is_action_pressed("LMB"):
 		fire()
 		
 func _handle_move_input():
@@ -58,6 +58,9 @@ func applymovement(acceletarion):
 	motion = motion.clamped(max_speed)
 	
 
+func _physics_process(delta):
+	if Input.is_action_just_pressed("ui_r"):
+		get_tree().reload_current_scene()
 
 func fire():
 	if can_shoot:
