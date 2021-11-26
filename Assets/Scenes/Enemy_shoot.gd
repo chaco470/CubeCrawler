@@ -4,7 +4,7 @@ signal death
 
 export (int) var vida = 3
 export (int) var dmg = 1
-export (float) var velocity = 150
+export (float) var velocity = 200
 export (PackedScene) var bullet:PackedScene
 var motion = Vector2.ZERO
 onready var bullet_spawn = $BulletSpawner

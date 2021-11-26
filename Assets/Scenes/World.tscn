@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Assets/Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Scenes/Enemy_shoot.tscn" type="PackedScene" id=2]
@@ -6,8 +6,8 @@
 [ext_resource path="res://Assets/Images/Tile-1-03.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Scripts/CrossAir.gd" type="Script" id=5]
 [ext_resource path="res://Assets/Images/CrossAir-04b.png" type="Texture" id=6]
-[ext_resource path="res://Assets/Scenes/Enemigos.gd" type="Script" id=7]
-[ext_resource path="res://Assets/Scenes/Puerta.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Assets/Rooms/RoomManager_3.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Assets/Rooms/RoomManager_4.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Assets/Scripts/World.gd" type="Script" id=9]
 [ext_resource path="res://Assets/Scenes/Enemy_melee_b.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Assets/Scenes/Enemy_explotion.tscn" type="PackedScene" id=11]
@@ -20,6 +20,8 @@
 [ext_resource path="res://Assets/Scenes/HealthUp.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Assets/Scenes/SizeDown.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Assets/Scenes/SpeedUp.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Assets/Scenes/Passage.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Assets/Rooms/RoomManager_6.tscn" type="PackedScene" id=22]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
@@ -50,86 +52,342 @@ points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
 [node name="Main" type="Node"]
 script = ExtResource( 9 )
 
-[node name="RoomManager_5" parent="." instance=ExtResource( 16 )]
-
-[node name="TileMap" parent="RoomManager_5" index="0"]
-position = Vector2( 2528, 0 )
-
-[node name="Puerta" parent="RoomManager_5" index="1"]
-position = Vector2( 2128, 608 )
-
-[node name="Puerta2" parent="RoomManager_5" index="2"]
-position = Vector2( 3008, -304 )
-
-[node name="Enemy_shoot" parent="RoomManager_5" index="3"]
-position = Vector2( 3448, 208 )
-
-[node name="Enemy_melee_b" parent="RoomManager_5" index="4"]
-position = Vector2( 2568, -24 )
-
-[node name="Enemy_shoot2" parent="RoomManager_5" index="5"]
-position = Vector2( 2680, 552 )
-
-[node name="Enemy_melee_b3" parent="RoomManager_5" index="6"]
-position = Vector2( 3000, 200 )
-
-[node name="Enemy_melee_b2" parent="RoomManager_5" index="7"]
-position = Vector2( 3424, 1024 )
-
-[node name="Enemy_explotion" parent="RoomManager_5" index="8"]
-position = Vector2( 3168, 616 )
-
-[node name="Enemy_shoot3" parent="RoomManager_5" index="9"]
-position = Vector2( 2632, 1088 )
-
-[node name="Enemy_explotion2" parent="RoomManager_5" index="10"]
-position = Vector2( 3760, -208 )
-
-[node name="Enemy_shoot4" parent="RoomManager_5" index="11"]
-position = Vector2( 3064, 1400 )
-
 [node name="GoldenRoom" parent="." instance=ExtResource( 15 )]
 
 [node name="TileMap" parent="GoldenRoom" index="0"]
-position = Vector2( 2400, -1888 )
+position = Vector2( 2336, -2176 )
 
 [node name="ItemSpawner" parent="GoldenRoom" index="1"]
 items = [ ExtResource( 19 ), ExtResource( 18 ), ExtResource( 20 ) ]
 
 [node name="Area2D" parent="GoldenRoom/ItemSpawner" index="0"]
-position = Vector2( 3008, -1568 )
+position = Vector2( 2944, -1856 )
 
 [node name="Position2D" parent="GoldenRoom/ItemSpawner" index="1"]
-position = Vector2( 3008, -1568 )
+position = Vector2( 2944, -1856 )
 
 [node name="RoomManager_1" parent="." instance=ExtResource( 12 )]
 
+[node name="Puerta" parent="RoomManager_1" index="0"]
+position = Vector2( 480, -304 )
+
+[node name="Puerta2" parent="RoomManager_1" index="1"]
+position = Vector2( 1392, 608 )
+
+[node name="Puerta3" parent="RoomManager_1" index="2"]
+position = Vector2( -432, 608 )
+
+[node name="TileMap" parent="RoomManager_1" index="3"]
+position = Vector2( 480, 608 )
+
+[node name="TileMap2" parent="RoomManager_1" index="4"]
+position = Vector2( 480, 608 )
+
+[node name="Enemy_melee_b8" parent="RoomManager_1" index="5"]
+position = Vector2( 480, -208 )
+
+[node name="Enemy_melee_b10" parent="RoomManager_1" index="6"]
+position = Vector2( 1312, 608 )
+
+[node name="Enemy_melee_b12" parent="RoomManager_1" index="7"]
+position = Vector2( 480, 1440 )
+
+[node name="Enemy_melee_b13" parent="RoomManager_1" index="8"]
+position = Vector2( -320, 608 )
+
+[node name="Enemy_shoot" parent="RoomManager_1" index="9"]
+position = Vector2( -320, 1440 )
+
+[node name="Enemy_shoot2" parent="RoomManager_1" index="10"]
+position = Vector2( 1312, -208 )
+
+[node name="Enemy_explotion" parent="RoomManager_1" index="11"]
+position = Vector2( -320, -208 )
+
+[node name="Enemy_explotion2" parent="RoomManager_1" index="12"]
+position = Vector2( 1312, 1440 )
+
 [node name="RoomManager_2" parent="." instance=ExtResource( 17 )]
 
-[node name="RoomManager_3" type="Node" parent="."]
-script = ExtResource( 7 )
+[node name="TileMap" parent="RoomManager_2" index="0"]
+position = Vector2( 480, -1888 )
 
-[node name="Puerta3" parent="RoomManager_3" instance=ExtResource( 8 )]
-position = Vector2( -95.8891, -3343.62 )
-rotation = 3.14159
+[node name="TileMap2" parent="RoomManager_2" index="1"]
+position = Vector2( 480, -1888 )
 
-[node name="Enemy_shoot2" parent="RoomManager_3" instance=ExtResource( 2 )]
-position = Vector2( -753.333, -3656 )
+[node name="Puerta" parent="RoomManager_2" index="2"]
+position = Vector2( 480, -976 )
 
-[node name="Enemy_shoot3" parent="RoomManager_3" instance=ExtResource( 2 )]
-position = Vector2( -753.333, -4390.16 )
+[node name="Puerta3" parent="RoomManager_2" index="3"]
+position = Vector2( -432, -1888 )
 
-[node name="Enemy_shoot4" parent="RoomManager_3" instance=ExtResource( 2 )]
-position = Vector2( -742.654, -4734.2 )
+[node name="Puerta2" parent="RoomManager_2" index="4"]
+position = Vector2( 480, -2800 )
 
-[node name="Enemy_shoot5" parent="RoomManager_3" instance=ExtResource( 2 )]
-position = Vector2( 758.125, -4753.23 )
+[node name="Enemy_melee_b2" parent="RoomManager_2" index="5"]
+position = Vector2( 240, -1640 )
 
-[node name="Enemy_shoot6" parent="RoomManager_3" instance=ExtResource( 2 )]
-position = Vector2( 736.72, -4306.09 )
+[node name="Enemy_melee_b3" parent="RoomManager_2" index="6"]
+position = Vector2( 1296, -1064 )
 
-[node name="Enemy_shoot7" parent="RoomManager_3" instance=ExtResource( 2 )]
-position = Vector2( 722.449, -3778.08 )
+[node name="Enemy_melee_b4" parent="RoomManager_2" index="7"]
+position = Vector2( -336, -2704 )
+
+[node name="Enemy_melee_b6" parent="RoomManager_2" index="8"]
+position = Vector2( 712, -2144 )
+
+[node name="Enemy_shoot" parent="RoomManager_2" index="9"]
+position = Vector2( 712, -1640 )
+
+[node name="Enemy_shoot2" parent="RoomManager_2" index="10"]
+position = Vector2( 199.7, -2144 )
+
+[node name="Enemy_explotion" parent="RoomManager_2" index="11"]
+position = Vector2( -336, -1064 )
+
+[node name="Enemy_explotion2" parent="RoomManager_2" index="12"]
+position = Vector2( 1296, -2704 )
+
+[node name="RoomManager_3" parent="." instance=ExtResource( 7 )]
+
+[node name="TileMap" parent="RoomManager_3" index="0"]
+position = Vector2( 480, -4384 )
+
+[node name="TileMap2" parent="RoomManager_3" index="1"]
+position = Vector2( 480, -4384 )
+
+[node name="Puerta3" parent="RoomManager_3" index="2"]
+position = Vector2( 480, -3472 )
+
+[node name="Enemy_shoot2" parent="RoomManager_3" index="3"]
+position = Vector2( -320, -3584 )
+
+[node name="Enemy_shoot3" parent="RoomManager_3" index="4"]
+position = Vector2( -320, -4384 )
+
+[node name="Enemy_shoot4" parent="RoomManager_3" index="5"]
+position = Vector2( -320, -5184 )
+
+[node name="Enemy_shoot5" parent="RoomManager_3" index="6"]
+position = Vector2( 1280, -5184 )
+
+[node name="Enemy_shoot6" parent="RoomManager_3" index="7"]
+position = Vector2( 1280, -4384 )
+
+[node name="Enemy_shoot7" parent="RoomManager_3" index="8"]
+position = Vector2( 1280, -3584 )
+
+[node name="Enemy_melee_b" parent="RoomManager_3" index="9"]
+position = Vector2( -320, -4776 )
+
+[node name="Enemy_melee_b3" parent="RoomManager_3" index="10"]
+position = Vector2( 1280, -4776 )
+
+[node name="Enemy_explotion" parent="RoomManager_3" index="11"]
+position = Vector2( 464, -4560 )
+
+[node name="Enemy_melee_b4" parent="RoomManager_3" index="12"]
+position = Vector2( 488, -5096 )
+
+[node name="Enemy_explotion2" parent="RoomManager_3" index="13"]
+position = Vector2( 464, -4136 )
+
+[node name="Enemy_melee_b5" parent="RoomManager_3" index="14"]
+position = Vector2( 1280, -3984 )
+
+[node name="Enemy_melee_b2" parent="RoomManager_3" index="15"]
+position = Vector2( -320, -3984 )
+
+[node name="RoomManager_4" parent="." instance=ExtResource( 8 )]
+
+[node name="RoomBase" parent="RoomManager_4" index="0"]
+position = Vector2( -2016, -1888 )
+
+[node name="TileMap2" parent="RoomManager_4" index="1"]
+position = Vector2( -2016, -1888 )
+
+[node name="Puerta" parent="RoomManager_4" index="2"]
+position = Vector2( -2016, -2800 )
+
+[node name="Puerta2" parent="RoomManager_4" index="3"]
+position = Vector2( -1104, -1888 )
+
+[node name="Puerta3" parent="RoomManager_4" index="4"]
+position = Vector2( -2016, -976 )
+
+[node name="Puerta4" parent="RoomManager_4" index="5"]
+position = Vector2( -2928, -1888 )
+
+[node name="Enemy_melee_b" parent="RoomManager_4" index="6"]
+position = Vector2( -2016, -1888 )
+
+[node name="Enemy_shoot" parent="RoomManager_4" index="7"]
+position = Vector2( -2272, -1632 )
+
+[node name="Enemy_melee_b3" parent="RoomManager_4" index="8"]
+position = Vector2( -1752, -1616 )
+
+[node name="Enemy_explotion" parent="RoomManager_4" index="9"]
+position = Vector2( -2008, -2200 )
+
+[node name="Enemy_explotion2" parent="RoomManager_4" index="10"]
+position = Vector2( -2016, -1584 )
+
+[node name="Enemy_shoot2" parent="RoomManager_4" index="11"]
+position = Vector2( -1760, -2144 )
+
+[node name="Enemy_shoot3" parent="RoomManager_4" index="12"]
+position = Vector2( -1312, -1184 )
+
+[node name="Enemy_shoot4" parent="RoomManager_4" index="13"]
+position = Vector2( -2720, -2592 )
+
+[node name="Enemy_melee_b2" parent="RoomManager_4" index="14"]
+position = Vector2( -2264, -2168 )
+
+[node name="Enemy_melee_b4" parent="RoomManager_4" index="15"]
+position = Vector2( -1304, -2592 )
+
+[node name="Enemy_melee_b5" parent="RoomManager_4" index="16"]
+position = Vector2( -2720, -1184 )
+
+[node name="RoomManager_5" parent="." instance=ExtResource( 16 )]
+
+[node name="TileMap" parent="RoomManager_5" index="0"]
+position = Vector2( 2464, 0 )
+
+[node name="Puerta" parent="RoomManager_5" index="1"]
+position = Vector2( 2064, 608 )
+
+[node name="Puerta2" parent="RoomManager_5" index="2"]
+position = Vector2( 2944, -304 )
+
+[node name="Enemy_shoot" parent="RoomManager_5" index="3"]
+position = Vector2( 3384, 208 )
+
+[node name="Enemy_melee_b" parent="RoomManager_5" index="4"]
+position = Vector2( 2504, -24 )
+
+[node name="Enemy_shoot2" parent="RoomManager_5" index="5"]
+position = Vector2( 2616, 552 )
+
+[node name="Enemy_melee_b3" parent="RoomManager_5" index="6"]
+position = Vector2( 2936, 200 )
+
+[node name="Enemy_melee_b2" parent="RoomManager_5" index="7"]
+position = Vector2( 3360, 1024 )
+
+[node name="Enemy_explotion" parent="RoomManager_5" index="8"]
+position = Vector2( 3104, 616 )
+
+[node name="Enemy_shoot3" parent="RoomManager_5" index="9"]
+position = Vector2( 2568, 1088 )
+
+[node name="Enemy_explotion2" parent="RoomManager_5" index="10"]
+position = Vector2( 3696, -208 )
+
+[node name="Enemy_shoot4" parent="RoomManager_5" index="11"]
+position = Vector2( 3000, 1400 )
+
+[node name="RoomManager_6" parent="." instance=ExtResource( 22 )]
+
+[node name="TileMap" parent="RoomManager_6" index="0"]
+position = Vector2( -2016, 608 )
+
+[node name="TileMap2" parent="RoomManager_6" index="1"]
+position = Vector2( -2016, 608 )
+
+[node name="Puerta" parent="RoomManager_6" index="2"]
+position = Vector2( -2016, -304 )
+
+[node name="Puerta2" parent="RoomManager_6" index="3"]
+position = Vector2( -1104, 608 )
+
+[node name="Enemy_shoot" parent="RoomManager_6" index="4"]
+position = Vector2( -1856, 608 )
+
+[node name="Enemy_shoot2" parent="RoomManager_6" index="5"]
+position = Vector2( -2016, 768 )
+
+[node name="Enemy_shoot3" parent="RoomManager_6" index="6"]
+position = Vector2( -2176, 608 )
+
+[node name="Enemy_shoot4" parent="RoomManager_6" index="7"]
+position = Vector2( -2016, 448 )
+
+[node name="Enemy_explotion" parent="RoomManager_6" index="8"]
+position = Vector2( -2880, 8 )
+
+[node name="Enemy_explotion3" parent="RoomManager_6" index="9"]
+position = Vector2( -1408, -248 )
+
+[node name="Enemy_explotion5" parent="RoomManager_6" index="10"]
+position = Vector2( -1152, 1224 )
+
+[node name="Enemy_explotion7" parent="RoomManager_6" index="11"]
+position = Vector2( -2624, 1480 )
+
+[node name="Enemy_melee_b" parent="RoomManager_6" index="12"]
+position = Vector2( -2880, 1216 )
+
+[node name="Enemy_melee_b2" parent="RoomManager_6" index="13"]
+position = Vector2( -2624, -248 )
+
+[node name="Enemy_melee_b3" parent="RoomManager_6" index="14"]
+position = Vector2( -1152, 8 )
+
+[node name="Enemy_melee_b4" parent="RoomManager_6" index="15"]
+position = Vector2( -1408, 1464 )
+
+[node name="RoomManager_7" parent="." instance=ExtResource( 7 )]
+
+[node name="TileMap" parent="RoomManager_7" index="0"]
+position = Vector2( -2016, -4384 )
+
+[node name="TileMap2" parent="RoomManager_7" index="1"]
+position = Vector2( -2016, -4384 )
+
+[node name="Puerta3" parent="RoomManager_7" index="2"]
+position = Vector2( -2016, -3472 )
+
+[node name="Enemy_shoot2" parent="RoomManager_7" index="3"]
+position = Vector2( -2816, -3584 )
+
+[node name="Enemy_shoot3" parent="RoomManager_7" index="4"]
+position = Vector2( -2816, -4384 )
+
+[node name="Enemy_shoot4" parent="RoomManager_7" index="5"]
+position = Vector2( -2816, -5184 )
+
+[node name="Enemy_shoot5" parent="RoomManager_7" index="6"]
+position = Vector2( -1216, -5184 )
+
+[node name="Enemy_shoot6" parent="RoomManager_7" index="7"]
+position = Vector2( -1216, -4384 )
+
+[node name="Enemy_shoot7" parent="RoomManager_7" index="8"]
+position = Vector2( -1216, -3584 )
+
+[node name="Enemy_melee_b" parent="RoomManager_7" index="9"]
+position = Vector2( -2816, -4776 )
+
+[node name="Enemy_melee_b3" parent="RoomManager_7" index="10"]
+position = Vector2( -1216, -4776 )
+
+[node name="Enemy_explotion" parent="RoomManager_7" index="11"]
+position = Vector2( -2024, -4568 )
+
+[node name="Enemy_melee_b4" parent="RoomManager_7" index="12"]
+position = Vector2( -1216, -3984 )
+
+[node name="Enemy_explotion2" parent="RoomManager_7" index="13"]
+position = Vector2( -2024, -4144 )
+
+[node name="Enemy_melee_b5" parent="RoomManager_7" index="14"]
+position = Vector2( -1216, -3984 )
+
+[node name="Enemy_melee_b2" parent="RoomManager_7" index="15"]
+position = Vector2( -2816, -3984 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -1
@@ -149,12 +407,6 @@ __meta__ = {
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 480, 600 )
-
-[node name="TileMap" type="TileMap" parent="."]
-tile_set = SubResource( 2 )
-cell_size = Vector2( 32, 32 )
-format = 1
-tile_data = PoolIntArray( -10289187, 0, 0, -10289186, 0, 0, -10289185, 0, 0, -10289184, 0, 0, -10289183, 0, 0, -10289182, 0, 0, -10289181, 0, 0, -10289180, 0, 0, -10289179, 0, 0, -10289178, 0, 0, -10289177, 0, 0, -10289176, 0, 0, -10289175, 0, 0, -10289174, 0, 0, -10289173, 0, 0, -10289172, 0, 0, -10289171, 0, 0, -10289170, 0, 0, -10289169, 0, 0, -10289168, 0, 0, -10289167, 0, 0, -10289166, 0, 0, -10289165, 0, 0, -10289164, 0, 0, -10289163, 0, 0, -10289162, 0, 0, -10289161, 0, 0, -10289160, 0, 0, -10289159, 0, 0, -10289158, 0, 0, -10289157, 0, 0, -10289156, 0, 0, -10289155, 0, 0, -10289154, 0, 0, -10289153, 0, 0, -10354688, 0, 0, -10354687, 0, 0, -10354686, 0, 0, -10354685, 0, 0, -10354684, 0, 0, -10354683, 0, 0, -10354682, 0, 0, -10354681, 0, 0, -10354680, 0, 0, -10354679, 0, 0, -10354678, 0, 0, -10354677, 0, 0, -10354676, 0, 0, -10354675, 0, 0, -10354674, 0, 0, -10354673, 0, 0, -10354672, 0, 0, -10354671, 0, 0, -10354670, 0, 0, -10354669, 0, 0, -10354668, 0, 0, -10354667, 0, 0, -10354666, 0, 0, -10354665, 0, 0, -10354664, 0, 0, -10354663, 0, 0, -10354662, 0, 0, -10354661, 0, 0, -10354660, 0, 0, -10354659, 0, 0, -10354658, 0, 0, -10354657, 0, 0, -10354656, 0, 0, -10223651, 0, 0, -10289120, 0, 0, -10158115, 0, 0, -10223584, 0, 0, -10092579, 0, 0, -10158048, 0, 0, -10027043, 0, 0, -10092512, 0, 0, -9961507, 0, 0, -10026976, 0, 0, -9895971, 0, 0, -9961440, 0, 0, -9830435, 0, 0, -9830413, 0, 0, -9895924, 0, 0, -9895904, 0, 0, -9764899, 0, 0, -9764877, 0, 0, -9830388, 0, 0, -9830368, 0, 0, -9699363, 0, 0, -9699341, 0, 0, -9764852, 0, 0, -9764832, 0, 0, -9633827, 0, 0, -9633806, 0, 0, -9633805, 0, 0, -9633804, 0, 0, -9699317, 0, 0, -9699316, 0, 0, -9699315, 0, 0, -9699296, 0, 0, -9568291, 0, 0, -9568270, 0, 0, -9568269, 0, 0, -9568268, 0, 0, -9633781, 0, 0, -9633780, 0, 0, -9633779, 0, 0, -9633760, 0, 0, -9502755, 0, 0, -9502734, 0, 0, -9502733, 0, 0, -9502732, 0, 0, -9568245, 0, 0, -9568244, 0, 0, -9568243, 0, 0, -9568224, 0, 0, -9437219, 0, 0, -9437198, 0, 0, -9437197, 0, 0, -9437196, 0, 0, -9502709, 0, 0, -9502708, 0, 0, -9502707, 0, 0, -9502688, 0, 0, -9371683, 0, 0, -9371661, 0, 0, -9437172, 0, 0, -9437152, 0, 0, -9306147, 0, 0, -9306125, 0, 0, -9371636, 0, 0, -9371616, 0, 0, -9240611, 0, 0, -9240589, 0, 0, -9306100, 0, 0, -9306080, 0, 0, -9175075, 0, 0, -9240544, 0, 0, -9109539, 0, 0, -9175008, 0, 0, -9044003, 0, 0, -9109472, 0, 0, -8978467, 0, 0, -9043936, 0, 0, -8912931, 0, 0, -8978400, 0, 0, -8847395, 0, 0, -8847369, 0, 0, -8912889, 0, 0, -8912864, 0, 0, -8781859, 0, 0, -8781833, 0, 0, -8847353, 0, 0, -8847328, 0, 0, -8716323, 0, 0, -8716297, 0, 0, -8781817, 0, 0, -8781792, 0, 0, -8650787, 0, 0, -8650762, 0, 0, -8650761, 0, 0, -8650760, 0, 0, -8716282, 0, 0, -8716281, 0, 0, -8716280, 0, 0, -8716256, 0, 0, -8585251, 0, 0, -8585226, 0, 0, -8585225, 0, 0, -8585224, 0, 0, -8650746, 0, 0, -8650745, 0, 0, -8650744, 0, 0, -8650720, 0, 0, -8519715, 0, 0, -8519689, 0, 0, -8585209, 0, 0, -8585184, 0, 0, -8454179, 0, 0, -8454153, 0, 0, -8519673, 0, 0, -8519648, 0, 0, -8388643, 0, 0, -8388617, 0, 0, -8454137, 0, 0, -8454112, 0, 0, -8323107, 0, 0, -8388576, 0, 0, -8257571, 0, 0, -8323040, 0, 0, -8192035, 0, 0, -8257504, 0, 0, -8126499, 0, 0, -8191968, 0, 0, -8060963, 0, 0, -8126432, 0, 0, -7995427, 0, 0, -7995405, 0, 0, -8060916, 0, 0, -8060896, 0, 0, -7929891, 0, 0, -7929869, 0, 0, -7995380, 0, 0, -7995360, 0, 0, -7864355, 0, 0, -7864333, 0, 0, -7929844, 0, 0, -7929824, 0, 0, -7798819, 0, 0, -7798798, 0, 0, -7798797, 0, 0, -7798796, 0, 0, -7864309, 0, 0, -7864308, 0, 0, -7864307, 0, 0, -7864288, 0, 0, -7733283, 0, 0, -7733262, 0, 0, -7733261, 0, 0, -7733260, 0, 0, -7798773, 0, 0, -7798772, 0, 0, -7798771, 0, 0, -7798752, 0, 0, -7667747, 0, 0, -7667726, 0, 0, -7667725, 0, 0, -7667724, 0, 0, -7733237, 0, 0, -7733236, 0, 0, -7733235, 0, 0, -7733216, 0, 0, -7602211, 0, 0, -7602190, 0, 0, -7602189, 0, 0, -7602188, 0, 0, -7667701, 0, 0, -7667700, 0, 0, -7667699, 0, 0, -7667680, 0, 0, -7536675, 0, 0, -7536653, 0, 0, -7602164, 0, 0, -7602144, 0, 0, -7471139, 0, 0, -7471117, 0, 0, -7536628, 0, 0, -7536608, 0, 0, -7405603, 0, 0, -7405581, 0, 0, -7471092, 0, 0, -7471072, 0, 0, -7340067, 0, 0, -7405536, 0, 0, -7274531, 0, 0, -7340000, 0, 0, -7208995, 0, 0, -7274464, 0, 0, -7143459, 0, 0, -7208928, 0, 0, -7077923, 0, 0, -7143392, 0, 0, -7012387, 0, 0, -7077856, 0, 0, -6946851, 0, 0, -7012320, 0, 0, -6881315, 0, 0, -6946784, 0, 0, -6815779, 0, 0, -6815778, 0, 0, -6815777, 0, 0, -6815776, 0, 0, -6815775, 0, 0, -6815774, 0, 0, -6815773, 0, 0, -6815772, 0, 0, -6815771, 0, 0, -6815770, 0, 0, -6815769, 0, 0, -6815768, 0, 0, -6815767, 0, 0, -6815766, 0, 0, -6815765, 0, 0, -6815764, 0, 0, -6815763, 0, 0, -6815762, 0, 0, -6815761, 0, 0, -6815760, 0, 0, -6815759, 0, 0, -6815758, 0, 0, -6815757, 0, 0, -6815756, 0, 0, -6815755, 0, 0, -6815754, 0, 0, -6815753, 0, 0, -6815752, 0, 0, -6815751, 0, 0, -6815750, 0, 0, -6815745, 0, 0, -6881280, 0, 0, -6881279, 0, 0, -6881278, 0, 0, -6881277, 0, 0, -6881276, 0, 0, -6881275, 0, 0, -6881274, 0, 0, -6881273, 0, 0, -6881272, 0, 0, -6881271, 0, 0, -6881270, 0, 0, -6881269, 0, 0, -6881268, 0, 0, -6881267, 0, 0, -6881266, 0, 0, -6881265, 0, 0, -6881264, 0, 0, -6881263, 0, 0, -6881262, 0, 0, -6881261, 0, 0, -6881260, 0, 0, -6881259, 0, 0, -6881258, 0, 0, -6881257, 0, 0, -6881256, 0, 0, -6881255, 0, 0, -6881254, 0, 0, -6881253, 0, 0, -6881252, 0, 0, -6881251, 0, 0, -6881250, 0, 0, -6881249, 0, 0, -6881248, 0, 0, -6750214, 0, 0, -6750209, 0, 0, -6684678, 0, 0, -6684673, 0, 0, -6619142, 0, 0, -6619137, 0, 0, -6553606, 0, 0, -6553601, 0, 0, -6488070, 0, 0, -6488065, 0, 0, -6422534, 0, 0, -6422529, 0, 0, -6356998, 0, 0, -6356993, 0, 0, -6422528, 0, 0, -6422527, 0, 0, -6422526, 0, 0, -6422525, 0, 0, -6422524, 0, 0, -6422523, 0, 0, -6422522, 0, 0, -6422521, 0, 0, -6422520, 0, 0, -6422519, 0, 0, -6422518, 0, 0, -6422517, 0, 0, -6422516, 0, 0, -6422515, 0, 0, -6422514, 0, 0, -6422513, 0, 0, -6422512, 0, 0, -6422511, 0, 0, -6291462, 0, 0, -6356975, 0, 0, -6225926, 0, 0, -6291439, 0, 0, -6160390, 0, 0, -6225903, 0, 0, -6094854, 0, 0, -6160367, 0, 0, -6029318, 0, 0, -6029317, 0, 0, -6029316, 0, 0, -6029315, 0, 0, -6029314, 0, 0, -6029313, 0, 0, -6094848, 0, 0, -6094847, 0, 0, -6094846, 0, 0, -6094845, 0, 0, -6094844, 0, 0, -6094843, 0, 0, -6094842, 0, 0, -6094841, 0, 0, -6094840, 0, 0, -6094839, 0, 0, -6094838, 0, 0, -6094837, 0, 0, -6094836, 0, 0, -6094831, 0, 0, -6029300, 0, 0, -6029295, 0, 0, -5963764, 0, 0, -5963759, 0, 0, -5898228, 0, 0, -5898223, 0, 0, -5832692, 0, 0, -5832687, 0, 0, -5767156, 0, 0, -5767151, 0, 0, -5701620, 0, 0, -5701615, 0, 0, -5636084, 0, 0, -5636079, 0, 0, -5570548, 0, 0, -5570543, 0, 0, -5505012, 0, 0, -5505007, 0, 0, -5439476, 0, 0, -5439471, 0, 0, -5373940, 0, 0, -5373935, 0, 0, -5308404, 0, 0, -5308399, 0, 0, -5242868, 0, 0, -5242863, 0, 0, -5177332, 0, 0, -5177327, 0, 0, -5111796, 0, 0, -5111791, 0, 0, -5046260, 0, 0, -5046255, 0, 0, -4980724, 0, 0, -4980719, 0, 0, -4915188, 0, 0, -4915183, 0, 0, -4849661, 0, 0, -4849660, 0, 0, -4849659, 0, 0, -4849658, 0, 0, -4849657, 0, 0, -4849656, 0, 0, -4849655, 0, 0, -4849654, 0, 0, -4849653, 0, 0, -4849652, 0, 0, -4849647, 0, 0, -4849646, 0, 0, -4849645, 0, 0, -4849644, 0, 0, -4849643, 0, 0, -4849642, 0, 0, -4849641, 0, 0, -4849640, 0, 0, -4849639, 0, 0, -4849638, 0, 0, -4849637, 0, 0, -4849636, 0, 0, -4849635, 0, 0, -4849634, 0, 0, -4849633, 0, 0, -4849632, 0, 0, -4849631, 0, 0, -4849630, 0, 0, -4849629, 0, 0, -4849628, 0, 0, -4849627, 0, 0, -4849626, 0, 0, -4521951, 0, 0, -3342324, 0, 0, -3342323, 0, 0, -3342322, 0, 0, -3342321, 0, 0, -3342320, 0, 0, -3276788, 0, 0, -3276787, 0, 0, -3276786, 0, 0, -3276785, 0, 0, -3276784, 0, 0, -3014659, 0, 0, -2359282, 0, 0, -2359281, 0, 0, -2031578, 0, 0, -1703945, 0, 0, -1703944, 0, 0, -1703943, 0, 0, -1703942, 0, 0, -1703941, 0, 0, -1703937, 0, 0, -1769472, 0, 0, -1769462, 0, 0, -1769461, 0, 0, -1769460, 0, 0, -1769455, 0, 0, -1769454, 0, 0, -1769453, 0, 0, -1769452, 0, 0, -1769451, 0, 0, -1769450, 0, 0, -1769449, 0, 0, -1769448, 0, 0, -1769447, 0, 0, -1769446, 0, 0, -1769445, 0, 0, -1769444, 0, 0, -1769443, 0, 0, -1769442, 0, 0, -1769441, 0, 0, -1769440, 0, 0, -1769439, 0, 0, -1769438, 0, 0, -1769437, 0, 0, -1769436, 0, 0, -1769435, 0, 0, -1769434, 0, 0, -1703924, 0, 0, -1703919, 0, 0, -1638388, 0, 0, -1638383, 0, 0, -1572852, 0, 0, -1572847, 0, 0, -1507316, 0, 0, -1507311, 0, 0, -1441780, 0, 0, -1441775, 0, 0, -1376244, 0, 0, -1376239, 0, 0, -1376165, 0, 0, -1376160, 0, 0, -1310708, 0, 0, -1310703, 0, 0, -1310629, 0, 0, -1310624, 0, 0, -1245172, 0, 0, -1245167, 0, 0, -1245093, 0, 0, -1245088, 0, 0, -1179636, 0, 0, -1179631, 0, 0, -1179557, 0, 0, -1179552, 0, 0, -1114100, 0, 0, -1114095, 0, 0, -1114021, 0, 0, -1114016, 0, 0, -1048564, 0, 0, -1048559, 0, 0, -1048485, 0, 0, -1048480, 0, 0, -983028, 0, 0, -983023, 0, 0, -982949, 0, 0, -982944, 0, 0, -917492, 0, 0, -917487, 0, 0, -917413, 0, 0, -917408, 0, 0, -851956, 0, 0, -851951, 0, 0, -851877, 0, 0, -851872, 0, 0, -786420, 0, 0, -786415, 0, 0, -786341, 0, 0, -786336, 0, 0, -720884, 0, 0, -720879, 0, 0, -720805, 0, 0, -720800, 0, 0, -524301, 0, 0, -589782, 0, 0, -458763, 0, 0, -393229, 0, 0, -196565, 0, 0, -131029, 0, 0, -65493, 0, 0, 43, 0, 0, 65579, 0, 0, 131115, 0, 0, 196651, 0, 0, 262187, 0, 0, 327723, 0, 0, 393259, 0, 0, 458795, 0, 0, 524331, 0, 0, 589867, 0, 0, 655403, 0, 0, 720939, 0, 0, 1048620, 0, 0, 1048621, 0, 0, 1048622, 0, 0, 1048623, 0, 0, 1048624, 0, 0, 1048625, 0, 0, 1048626, 0, 0, 1048627, 0, 0, 1048628, 0, 0, 1048629, 0, 0, 1048630, 0, 0, 1048631, 0, 0, 1048632, 0, 0, 1048633, 0, 0, 1048634, 0, 0, 1048635, 0, 0, 1048636, 0, 0, 1048637, 0, 0, 1048638, 0, 0, 1048639, 0, 0, 1048640, 0, 0, 1048641, 0, 0, 1376299, 0, 0, 1376300, 0, 0, 1376301, 0, 0, 1376302, 0, 0, 1376303, 0, 0, 1376304, 0, 0, 1376305, 0, 0, 1376306, 0, 0, 1376307, 0, 0, 1376308, 0, 0, 1376309, 0, 0, 1376310, 0, 0, 1376311, 0, 0, 1376312, 0, 0, 1376313, 0, 0, 1376314, 0, 0, 1376315, 0, 0, 1376316, 0, 0, 1376317, 0, 0, 1376318, 0, 0, 1376319, 0, 0, 1376320, 0, 0, 1376321, 0, 0, 1441835, 0, 0, 1507371, 0, 0, 1572907, 0, 0, 1638443, 0, 0, 2686968, 0, 0, 2752504, 0, 0, 2949109, 0, 0 )
 
 [node name="CrossAir" type="Node" parent="."]
 script = ExtResource( 5 )
@@ -182,5 +434,44 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[editable path="RoomManager_5"]
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource( 2 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( -5767151, 0, 0, -1703924, 0, 0, -1703919, 0, 0 )
+
+[node name="Passage" parent="." instance=ExtResource( 21 )]
+position = Vector2( 480, -640 )
+
+[node name="Passage8" parent="." instance=ExtResource( 21 )]
+position = Vector2( -2016, -3136 )
+
+[node name="Passage6" parent="." instance=ExtResource( 21 )]
+position = Vector2( -2016, -640 )
+
+[node name="Passage4" parent="." instance=ExtResource( 21 )]
+position = Vector2( 480, -3136 )
+
+[node name="Passage3" parent="." instance=ExtResource( 21 )]
+position = Vector2( 2944, -640 )
+
+[node name="Passage2" parent="." instance=ExtResource( 21 )]
+position = Vector2( 1728, 608 )
+rotation = 1.5708
+
+[node name="Passage7" parent="." instance=ExtResource( 21 )]
+position = Vector2( -768, 608 )
+rotation = 1.5708
+
+[node name="Passage5" parent="." instance=ExtResource( 21 )]
+position = Vector2( -768, -1888 )
+rotation = 1.5708
+
 [editable path="GoldenRoom"]
+[editable path="RoomManager_1"]
+[editable path="RoomManager_2"]
+[editable path="RoomManager_3"]
+[editable path="RoomManager_4"]
+[editable path="RoomManager_5"]
+[editable path="RoomManager_6"]
+[editable path="RoomManager_7"]
