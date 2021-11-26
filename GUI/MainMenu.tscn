@@ -24,32 +24,32 @@ margin_right = 1280.0
 margin_bottom = 720.0
 
 [node name="MainVContainer" type="VBoxContainer" parent="MainCContainer"]
-margin_left = 211.0
+margin_left = 215.0
 margin_top = 133.0
-margin_right = 1069.0
+margin_right = 1065.0
 margin_bottom = 586.0
 custom_constants/separation = 200
 
 [node name="TitleContainer" type="CenterContainer" parent="MainCContainer/MainVContainer"]
-margin_right = 858.0
+margin_right = 850.0
 margin_bottom = 101.0
 
 [node name="GameTitle" type="Label" parent="MainCContainer/MainVContainer/TitleContainer"]
-margin_right = 858.0
+margin_right = 850.0
 margin_bottom = 101.0
+custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color = Color( 0.607843, 0.2, 0.929412, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-custom_fonts/font = ExtResource( 4 )
 text = "CubeCrawler"
 
 [node name="OptionsCContainer" type="CenterContainer" parent="MainCContainer/MainVContainer"]
 margin_top = 301.0
-margin_right = 858.0
+margin_right = 850.0
 margin_bottom = 453.0
 
 [node name="OptionsVContainer" type="VBoxContainer" parent="MainCContainer/MainVContainer/OptionsCContainer"]
-margin_left = 262.0
-margin_right = 596.0
+margin_left = 258.0
+margin_right = 592.0
 margin_bottom = 152.0
 
 [node name="StartCContainer" type="CenterContainer" parent="MainCContainer/MainVContainer/OptionsCContainer/OptionsVContainer"]
@@ -64,16 +64,16 @@ margin_bottom = 74.0
 margin_right = 27.0
 margin_bottom = 74.0
 rect_min_size = Vector2( 27, 0 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = ">"
 
 [node name="StartButton" type="Label" parent="MainCContainer/MainVContainer/OptionsCContainer/OptionsVContainer/StartCContainer/StartHContainer"]
 margin_left = 31.0
 margin_right = 334.0
 margin_bottom = 74.0
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "Empezar Juego"
 
 [node name="ExitCContainer" type="CenterContainer" parent="MainCContainer/MainVContainer/OptionsCContainer/OptionsVContainer"]
@@ -89,8 +89,8 @@ margin_bottom = 74.0
 margin_right = 27.0
 margin_bottom = 74.0
 rect_min_size = Vector2( 27, 0 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = ">"
 
 [node name="ExitButton" type="Label" parent="MainCContainer/MainVContainer/OptionsCContainer/OptionsVContainer/ExitCContainer/ExitHContainer"]
@@ -98,6 +98,6 @@ margin_left = 31.0
 margin_right = 334.0
 margin_bottom = 74.0
 rect_min_size = Vector2( 303, 0 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "Salir"

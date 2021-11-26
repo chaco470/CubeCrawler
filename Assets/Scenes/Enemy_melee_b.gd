@@ -6,6 +6,7 @@ export (int) var vida = 3
 export (int) var dmg = 1
 export (float) var velocity = 300
 onready var state_machine = $StateMachine
+onready var hurt_sound = $HurtAudio
 var motion = Vector2.ZERO
 var can_damage = false
 
@@ -22,6 +23,7 @@ func _demage():
 		ia.target.notify_hit(-dmg)
 
 func hit(damage_to_take):
+	hurt_sound.play()
 	vida -= damage_to_take
 
 func _follow_player(target):

@@ -6,6 +6,7 @@ export (int) var vida = 3
 export (int) var dmg = 1
 export (float) var velocity = 300
 onready var state_machine = $StateMachine
+onready var hurt_sound = $HurtAudio
 var motion = Vector2.ZERO
 var can_damage = false
 var explode_damage = false
@@ -26,6 +27,7 @@ func _play_animation(animation_name:String, should_restart:bool = true, playback
 		player_animation.play(animation_name)
 
 func hit(damage_to_take):
+	hurt_sound.play()
 	vida -= damage_to_take
 
 func _remove():

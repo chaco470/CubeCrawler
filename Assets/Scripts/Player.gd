@@ -20,6 +20,8 @@ onready var invulnerability_timer = $InvulnerabilityTimer
 onready var player_animation = $AnimationPlayer
 onready var cadencia_de_disparo = $Cadencia
 onready var sprite = $Sprite
+onready var hurt_audio = $HurtAudio
+onready var shoot_audio = $ShootAudio
 
 func _ready():
 	state_machine.set_parent(self)
@@ -64,6 +66,7 @@ func _physics_process(delta):
 
 func fire():
 	if can_shoot:
+		shoot_audio.play()
 		GlobalObjects.camera.shake(50)
 		var bullet_instance = bullet.instance()
 		bullet_instance.initialize(self.rotation,bullet_spawn.get_global_position(), global_position.direction_to(bullet_spawn.global_position), damage)
@@ -76,6 +79,7 @@ func kill():
 
 func notify_hit(amount):
 	if invulnerability_timer.is_stopped():
+		hurt_audio.play()
 		state_machine.notify_hit(amount)
 		invulnerability_timer.start()
 		player_animation.queue("hurt_animation")
@@ -97,7 +101,8 @@ func handle_pick_stat(statToAdd):
 		"stats":
 			max_speed *= statToAdd.max_speed_boost
 			cadencia_de_disparo.wait_time *= statToAdd.cadencia_disparo
-			PlayerData.set_current_health(PlayerData.current_health + statToAdd.health_to_add)
+			PlayerData.max_health += statToAdd.health_to_add
+			notify_hit(statToAdd.health_to_add)
 			sprite.scale.x *= statToAdd.size
 			sprite.scale.y *= statToAdd.size
 		_:

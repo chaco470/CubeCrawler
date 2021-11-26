@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Assets/Images/Cuadraro-Gris-04.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Scenes/Enemy_shoot.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Scenes/IA_shooter.gd" type="Script" id=3]
 [ext_resource path="res://Assets/Scenes/Enemy_bullet.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/Scripts/StateMachineEnemyShoot.gd" type="Script" id=5]
+[ext_resource path="res://Assets/Sounds/Hit_Hurt_Enemy.wav" type="AudioStream" id=6]
 [ext_resource path="res://Assets/Scripts/DeathEnemyShot.gd" type="Script" id=7]
 [ext_resource path="res://Assets/Scripts/EngageEnemyShoot.gd" type="Script" id=8]
 [ext_resource path="res://Assets/Scripts/PatrolEnemy.gd" type="Script" id=9]
@@ -66,6 +67,9 @@ shape = SubResource( 3 )
 
 [node name="BulletSpawner" type="Position2D" parent="."]
 position = Vector2( 40, 0 )
+
+[node name="HurtAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 6 )
 
 [connection signal="timeout" from="IA_shooter/ShootTimer" to="IA_shooter" method="_on_ShootTimer_timeout"]
 [connection signal="timeout" from="IA_shooter/MoveTimer" to="IA_shooter" method="_on_MoveTimer_timeout"]

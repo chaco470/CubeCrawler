@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/The Dream Is Always The Same.wav-f45e20ef8e700c188d3d7cf7594665e3.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/The Dream Is Always The Same.wav"
+dest_files=[ "res://.import/The Dream Is Always The Same.wav-f45e20ef8e700c188d3d7cf7594665e3.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

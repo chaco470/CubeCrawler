@@ -2,6 +2,7 @@ extends Camera2D
 
 onready var shake_timer = $Timer
 onready var shake_tween = $Tween
+onready var music = $LevelMusic
 
 var shake_amount = 0
 var default_offset = offset
@@ -11,6 +12,8 @@ func _ready():
 	set_process(false)
 
 func _physics_process(delta):
+	if !music.playing:
+		music.play()
 	offset = Vector2(rand_range(-shake_amount, shake_amount),rand_range(shake_amount, -shake_amount)) * delta + default_offset
 
 

@@ -11,15 +11,12 @@ onready var bullet_spawn = $BulletSpawner
 onready var ia = $IA_shooter
 onready var state_machine = $StateMachine
 onready var player_detector = $Detector
+onready var hurt_sound = $HurtAudio
 
 func _ready():
 	state_machine.set_parent(self)
 	ia.initialize(self)
 	ia.set_parent(self)
-
-	#if vida <= 0:
-
-
 
 func _fire_player():
 	var bullet_instance = bullet.instance()
@@ -37,6 +34,7 @@ func _remove():
 	queue_free()
 
 func hit(damage_to_take):
+	hurt_sound.play()
 	vida -= damage_to_take
 
 func _patrullar():
