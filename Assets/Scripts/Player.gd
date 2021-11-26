@@ -5,7 +5,7 @@ signal health_update()
 
 export (float) var speed = 500
 export (PackedScene) var bullet:PackedScene
-export (int) var max_health = 6
+export (int) var max_health = 4
 export (int) var damage = 1
 
 var max_speed = 400
