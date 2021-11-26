@@ -15,6 +15,10 @@ func initialize(rotation_given,spawn_position:Vector2, degree:Vector2, damage_to
 	damage = damage_to_make
 	bullet_speed = bullet_speed_given
 
+
+
+	
+
 func _process(delta):
 	position += degree * bullet_speed * delta
 

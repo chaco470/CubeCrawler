@@ -6,7 +6,9 @@ export (int) var vida = 3
 export (int) var dmg = 1
 export (float) var velocity = 300
 onready var state_machine = $StateMachine
+onready var enemy_animation:AnimationPlayer = $EnemyAnimation
 onready var hurt_sound = $HurtAudio
+onready var dead_sound = $DeadAudio
 var motion = Vector2.ZERO
 var can_damage = false
 
@@ -41,3 +43,8 @@ func _on_HitBox_body_entered(body):
 func _on_HitBox_body_exited(body):
 	if body.has_method("notify_hit"):
 		can_damage = false
+
+
+func _play_animation(anim_name:String):
+	if enemy_animation.has_animation(anim_name):
+		enemy_animation.play(anim_name)
