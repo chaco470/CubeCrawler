@@ -1,6 +1,6 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://Assets/Images/Triangulo-Rojo-03.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Images/Triangulo-Rojo.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Scenes/Enemy_melee_b.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Scenes/IA.gd" type="Script" id=3]
 [ext_resource path="res://Assets/Scripts/DeadMelee.gd" type="Script" id=4]
@@ -8,12 +8,30 @@
 [ext_resource path="res://Assets/Scripts/EngageMelee.gd" type="Script" id=6]
 [ext_resource path="res://Assets/Scripts/PatrollMelee.gd" type="Script" id=7]
 [ext_resource path="res://Assets/Sounds/Hit_Hurt_Enemy.wav" type="AudioStream" id=8]
+[ext_resource path="res://Assets/Sounds/Triangulo_Dead.mp3" type="AudioStream" id=9]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 16.781
 
 [sub_resource type="CircleShape2D" id=2]
 radius = 424.302
+
+[sub_resource type="Animation" id=3]
+resource_name = "dead"
+length = 2.0
+step = 0.46
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6 ]
+}
 
 [node name="Enemy_melee_b" type="KinematicBody2D" groups=[
 "enemy",
@@ -33,10 +51,14 @@ script = ExtResource( 6 )
 script = ExtResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 9.77516e-06, 0.17677 )
 rotation = -1.5708
+scale = Vector2( 1.17397, 1.19733 )
 texture = ExtResource( 1 )
+hframes = 8
 
 [node name="HitBox" type="Area2D" parent="."]
+visible = false
 rotation = -1.5708
 
 [node name="CollisionShape2D2" type="CollisionPolygon2D" parent="HitBox"]
@@ -44,11 +66,13 @@ rotation = 1.5708
 polygon = PoolVector2Array( -25, -37, 26, 0, -25, 37 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2( -8, 0 )
 rotation = -1.5708
 shape = SubResource( 1 )
 
 [node name="IA" type="Node2D" parent="."]
+visible = false
 script = ExtResource( 3 )
 
 [node name="Detector" type="Area2D" parent="IA"]
@@ -57,9 +81,19 @@ script = ExtResource( 3 )
 shape = SubResource( 2 )
 
 [node name="HurtAudio" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 0.353546, 1.06066 )
 stream = ExtResource( 8 )
+
+[node name="DeadAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+volume_db = -17.789
+pitch_scale = 0.92
+
+[node name="EnemyAnimation" type="AnimationPlayer" parent="."]
+anims/dead = SubResource( 3 )
 
 [connection signal="body_entered" from="HitBox" to="." method="_on_HitBox_body_entered"]
 [connection signal="body_exited" from="HitBox" to="." method="_on_HitBox_body_exited"]
 [connection signal="body_entered" from="IA/Detector" to="IA" method="_on_Detector_body_entered"]
 [connection signal="body_exited" from="IA/Detector" to="IA" method="_on_Detector_body_exited"]
+[connection signal="animation_finished" from="EnemyAnimation" to="StateMachine/Dead" method="_on_EnemyAnimation_animation_finished"]
