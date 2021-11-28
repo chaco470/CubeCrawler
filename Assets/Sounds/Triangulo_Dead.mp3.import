@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Triangulo_Dead.mp3-aafb8348bfcdf2ec69845065f83dfb2c.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sounds/Triangulo_Dead.mp3"
+dest_files=[ "res://.import/Triangulo_Dead.mp3-aafb8348bfcdf2ec69845065f83dfb2c.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
