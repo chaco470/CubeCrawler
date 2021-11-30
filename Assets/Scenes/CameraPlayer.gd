@@ -7,13 +7,17 @@ onready var music = $LevelMusic
 var shake_amount = 0
 var default_offset = offset
 
+export (Array) var playList 
+
 func _ready():
+	randomize()
+	music.stream = playList[round(rand_range(-0.5, 2.49))]
+	music.play()
+	music.volume_db = -35.0
 	GlobalObjects.camera = self
 	set_process(false)
 
 func _physics_process(delta):
-	if !music.playing:
-		music.play()
 	offset = Vector2(rand_range(-shake_amount, shake_amount),rand_range(shake_amount, -shake_amount)) * delta + default_offset
 
 
@@ -47,3 +51,8 @@ func _on_Timer_timeout():
 
 
 
+
+
+func _on_LevelMusic_finished():
+	music.stream = playList[round(rand_range(0.0, 2.0))]
+	music.play()

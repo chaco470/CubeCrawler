@@ -4,6 +4,7 @@ export (PackedScene) var first_level
 
 onready var start_selector = $MainCContainer/MainVContainer/OptionsCContainer/OptionsVContainer/StartCContainer/StartHContainer/Selector
 onready var exit_selector = $MainCContainer/MainVContainer/OptionsCContainer/OptionsVContainer/ExitCContainer/ExitHContainer/Selector
+onready var intro_music = $IntroMusic
 
 var current_selection = 0
 
@@ -19,7 +20,9 @@ func _process(delta):
 		set_current_selection(current_selection)
 	elif Input.is_action_just_pressed("ui_accept"):
 		handle_selection(current_selection)
-		
+	
+	if !intro_music.playing:
+		intro_music.play()
 func handle_selection(_current_selection):
 	if _current_selection == 0:
 		get_tree().change_scene_to(first_level)

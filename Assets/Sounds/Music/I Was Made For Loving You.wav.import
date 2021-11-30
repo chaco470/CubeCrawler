@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/I Was Made For Loving You.wav-2edd744e72f662344ba578970963a890.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/Music/I Was Made For Loving You.wav"
+dest_files=[ "res://.import/I Was Made For Loving You.wav-2edd744e72f662344ba578970963a890.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

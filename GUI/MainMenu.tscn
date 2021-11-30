@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://GUI/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Scenes/World.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Fonts/Titillium_font.tres" type="DynamicFont" id=3]
 [ext_resource path="res://Assets/Fonts/space_frigate_font.tres" type="DynamicFont" id=4]
+[ext_resource path="res://Assets/Images/Cubert&enemies_5.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Sounds/Music/Welcome to the Jungle.wav" type="AudioStream" id=6]
 
 [node name="MainMenu" type="MarginContainer"]
 anchor_right = 1.0
@@ -14,7 +16,14 @@ __meta__ = {
 }
 first_level = ExtResource( 2 )
 
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 1280.0
+margin_bottom = 720.0
+texture = ExtResource( 5 )
+expand = true
+
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 margin_right = 1280.0
 margin_bottom = 720.0
 color = Color( 0.0784314, 0.105882, 0.266667, 1 )
@@ -101,3 +110,8 @@ rect_min_size = Vector2( 303, 0 )
 custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "Salir"
+
+[node name="IntroMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+volume_db = -35.0
+autoplay = true
