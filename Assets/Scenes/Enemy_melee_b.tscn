@@ -14,7 +14,7 @@
 radius = 16.781
 
 [sub_resource type="CircleShape2D" id=2]
-radius = 424.302
+radius = 551.646
 
 [sub_resource type="Animation" id=3]
 resource_name = "dead"
@@ -72,12 +72,12 @@ rotation = -1.5708
 shape = SubResource( 1 )
 
 [node name="IA" type="Node2D" parent="."]
-visible = false
 script = ExtResource( 3 )
 
 [node name="Detector" type="Area2D" parent="IA"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="IA/Detector"]
+position = Vector2( 0.353546, 0 )
 shape = SubResource( 2 )
 
 [node name="HurtAudio" type="AudioStreamPlayer2D" parent="."]

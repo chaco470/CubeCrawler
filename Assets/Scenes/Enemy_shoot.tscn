@@ -19,7 +19,7 @@ extents = Vector2( 31.5988, 31.5466 )
 radius = 30.3859
 
 [sub_resource type="CircleShape2D" id=3]
-radius = 448.071
+radius = 544.059
 
 [sub_resource type="Animation" id=4]
 resource_name = "dead"
@@ -72,7 +72,6 @@ visible = false
 shape = SubResource( 2 )
 
 [node name="IA_shooter" type="Node2D" parent="."]
-visible = false
 script = ExtResource( 3 )
 
 [node name="ShootTimer" type="Timer" parent="IA_shooter"]

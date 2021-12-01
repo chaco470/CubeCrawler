@@ -84,10 +84,10 @@ radius = 32.0
 radius = 320.0
 
 [sub_resource type="CircleShape2D" id=5]
-radius = 448.0
+radius = 544.0
 
 [node name="Enemy_explotion" type="KinematicBody2D" groups=[
-"Enemy",
+"enemy",
 ]]
 script = ExtResource( 2 )
 
@@ -131,6 +131,7 @@ shape = SubResource( 4 )
 script = ExtResource( 3 )
 
 [node name="ExplotionTimer" type="Timer" parent="IA"]
+wait_time = 2.0
 
 [node name="ExplotionWaitTimer" type="Timer" parent="IA"]
 wait_time = 0.5
