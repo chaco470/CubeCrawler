@@ -23,7 +23,6 @@ radius = 544.059
 
 [sub_resource type="Animation" id=4]
 resource_name = "dead"
-length = 2.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -40,6 +39,7 @@ tracks/0/keys = {
 [node name="Enemy_shoot" type="KinematicBody2D" groups=[
 "enemy",
 ]]
+modulate = Color( 1.5, 1.5, 1.5, 1 )
 script = ExtResource( 2 )
 bullet = ExtResource( 4 )
 

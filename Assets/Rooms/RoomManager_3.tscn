@@ -12,8 +12,10 @@
 script = ExtResource( 6 )
 
 [node name="TileMap" parent="." instance=ExtResource( 7 )]
+modulate = Color( 1.5, 1.5, 1.5, 1 )
 
 [node name="TileMap2" type="TileMap" parent="."]
+modulate = Color( 1.5, 1.5, 1.5, 1 )
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 32, 32 )
 format = 1

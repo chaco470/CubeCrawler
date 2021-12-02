@@ -12,8 +12,10 @@
 script = ExtResource( 7 )
 
 [node name="RoomBase" parent="." instance=ExtResource( 5 )]
+modulate = Color( 1.5, 1.5, 1.5, 1 )
 
 [node name="TileMap2" type="TileMap" parent="."]
+modulate = Color( 1.5, 1.5, 1.5, 1 )
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 32, 32 )
 show_collision = true
