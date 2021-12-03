@@ -59,6 +59,9 @@ glow_hdr_threshold = 1.5
 [node name="Main" type="Node"]
 script = ExtResource( 9 )
 
+[node name="PauseCL" parent="." instance=ExtResource( 25 )]
+layer = 2
+
 [node name="GoldenRoom" parent="." instance=ExtResource( 15 )]
 
 [node name="TileMap" parent="GoldenRoom" index="0"]
@@ -476,6 +479,7 @@ position = Vector2( 8070.07, -2281.11 )
 position = Vector2( 6787.99, -1683.84 )
 
 [node name="GUI" type="CanvasLayer" parent="."]
+layer = 4
 script = ExtResource( 13 )
 heart_scene = ExtResource( 14 )
 
@@ -493,6 +497,7 @@ __meta__ = {
 [node name="TCReffect" parent="GUI" instance=ExtResource( 23 )]
 margin_right = 2267.0
 margin_bottom = 1275.0
+mouse_filter = 2
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 2 )
@@ -533,8 +538,6 @@ rotation = 1.5708
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 3 )
-
-[node name="PauseCL" parent="." instance=ExtResource( 25 )]
 
 [editable path="GoldenRoom"]
 [editable path="RoomManager_1"]
