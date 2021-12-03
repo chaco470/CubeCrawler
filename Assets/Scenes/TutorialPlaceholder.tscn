@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Assets/Images/BulletModifier-03.png" type="Texture" id=1]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 917.25, 697.75 )
+scale = Vector2( 10.3065, 11.9516 )
+texture = ExtResource( 1 )

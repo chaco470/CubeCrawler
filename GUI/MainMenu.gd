@@ -1,38 +1,36 @@
-extends MarginContainer
+extends Control
 
-export (PackedScene) var first_level 
+export (PackedScene) var first_level_scene 
+export (PackedScene) var tutorial_scene
 
-onready var start_selector = $MainCContainer/MainVContainer/OptionsCContainer/OptionsVContainer/StartCContainer/StartHContainer/Selector
-onready var exit_selector = $MainCContainer/MainVContainer/OptionsCContainer/OptionsVContainer/ExitCContainer/ExitHContainer/Selector
 onready var intro_music = $IntroMusic
-
-var current_selection = 0
+onready var new_game_button = $Menu/Buttons/NewGameButton
+onready var tutorial_button = $Menu/Buttons/TutorialButton
+onready var exit_button = $Menu/Buttons/ExitButton
 
 func _ready():
-	set_current_selection(0)
-
-func _process(delta):
-	if Input.is_action_just_pressed("ui_down") && current_selection != 1:
-		current_selection += 1
-		set_current_selection(current_selection)
-	elif Input.is_action_just_pressed("ui_up") && current_selection != 0:
-		current_selection -= 1
-		set_current_selection(current_selection)
-	elif Input.is_action_just_pressed("ui_accept"):
-		handle_selection(current_selection)
-	
 	if !intro_music.playing:
 		intro_music.play()
-func handle_selection(_current_selection):
-	if _current_selection == 0:
-		get_tree().change_scene_to(first_level)
-	elif _current_selection == 1:
-		get_tree().quit()
+	new_game_button.grab_focus()
 
-func set_current_selection(_current_selection):
-	start_selector.text = ""
-	exit_selector.text = ""
-	if _current_selection == 0:
-		start_selector.text = ">"
-	elif _current_selection == 1:
-		exit_selector.text = ">"
+func _process(delta):
+	if (!new_game_button.has_focus() && !tutorial_button.has_focus() && !exit_button.has_focus()):
+		new_game_button.grab_focus()
+
+func _on_NewGameButton_pressed():
+	get_tree().change_scene_to(first_level_scene)
+
+func _on_TutorialButton_pressed():
+	get_tree().change_scene_to(tutorial_scene)
+
+func _on_ExitButton_pressed():
+	get_tree().quit()
+
+func _on_NewGameButton_mouse_entered():
+	new_game_button.grab_focus()
+
+func _on_TutorialButton_mouse_entered():
+	tutorial_button.grab_focus()
+
+func _on_ExitButton_mouse_entered():
+	exit_button.grab_focus()

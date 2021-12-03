@@ -1,117 +1,36 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://GUI/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Scenes/World.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Fonts/Titillium_font.tres" type="DynamicFont" id=3]
-[ext_resource path="res://Assets/Fonts/space_frigate_font.tres" type="DynamicFont" id=4]
 [ext_resource path="res://Assets/Images/Cubert&enemies_6b.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Sounds/Music/Welcome to the Jungle.wav" type="AudioStream" id=6]
 [ext_resource path="res://Assets/Scenes/TCReffect.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Assets/Scenes/TutorialPlaceholder.tscn" type="PackedScene" id=8]
 
-[node name="MainMenu" type="MarginContainer"]
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[node name="MainMenu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+mouse_filter = 2
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-first_level = ExtResource( 2 )
+first_level_scene = ExtResource( 2 )
+tutorial_scene = ExtResource( 8 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
-margin_right = 1900.0
-margin_bottom = 1080.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 texture = ExtResource( 5 )
 expand = true
-
-[node name="ColorRect" type="ColorRect" parent="."]
-visible = false
-margin_right = 1900.0
-margin_bottom = 1080.0
-color = Color( 0.0784314, 0.105882, 0.266667, 1 )
-
-[node name="MainCContainer" type="CenterContainer" parent="."]
-margin_right = 1900.0
-margin_bottom = 1080.0
-
-[node name="MainVContainer" type="VBoxContainer" parent="MainCContainer"]
-margin_left = 783.0
-margin_top = 364.0
-margin_right = 1117.0
-margin_bottom = 716.0
-custom_constants/separation = 200
-
-[node name="TitleContainer" type="CenterContainer" parent="MainCContainer/MainVContainer"]
-margin_right = 334.0
-
-[node name="GameTitle" type="Label" parent="MainCContainer/MainVContainer/TitleContainer"]
-visible = false
-margin_left = -258.0
-margin_top = -51.0
-margin_right = 592.0
-margin_bottom = 50.0
-custom_fonts/font = ExtResource( 4 )
-custom_colors/font_color = Color( 0.607843, 0.2, 0.929412, 1 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-text = "CubeCrawler"
-
-[node name="OptionsCContainer" type="CenterContainer" parent="MainCContainer/MainVContainer"]
-margin_top = 200.0
-margin_right = 334.0
-margin_bottom = 352.0
-
-[node name="OptionsVContainer" type="VBoxContainer" parent="MainCContainer/MainVContainer/OptionsCContainer"]
-margin_right = 334.0
-margin_bottom = 152.0
-
-[node name="StartCContainer" type="CenterContainer" parent="MainCContainer/MainVContainer/OptionsCContainer/OptionsVContainer"]
-margin_right = 334.0
-margin_bottom = 74.0
-
-[node name="StartHContainer" type="HBoxContainer" parent="MainCContainer/MainVContainer/OptionsCContainer/OptionsVContainer/StartCContainer"]
-margin_right = 334.0
-margin_bottom = 74.0
-
-[node name="Selector" type="Label" parent="MainCContainer/MainVContainer/OptionsCContainer/OptionsVContainer/StartCContainer/StartHContainer"]
-margin_right = 27.0
-margin_bottom = 74.0
-rect_min_size = Vector2( 27, 0 )
-custom_fonts/font = ExtResource( 3 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-text = ">"
-
-[node name="StartButton" type="Label" parent="MainCContainer/MainVContainer/OptionsCContainer/OptionsVContainer/StartCContainer/StartHContainer"]
-margin_left = 31.0
-margin_right = 334.0
-margin_bottom = 74.0
-custom_fonts/font = ExtResource( 3 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-text = "Empezar Juego"
-
-[node name="ExitCContainer" type="CenterContainer" parent="MainCContainer/MainVContainer/OptionsCContainer/OptionsVContainer"]
-margin_top = 78.0
-margin_right = 334.0
-margin_bottom = 152.0
-
-[node name="ExitHContainer" type="HBoxContainer" parent="MainCContainer/MainVContainer/OptionsCContainer/OptionsVContainer/ExitCContainer"]
-margin_right = 334.0
-margin_bottom = 74.0
-
-[node name="Selector" type="Label" parent="MainCContainer/MainVContainer/OptionsCContainer/OptionsVContainer/ExitCContainer/ExitHContainer"]
-margin_right = 27.0
-margin_bottom = 74.0
-rect_min_size = Vector2( 27, 0 )
-custom_fonts/font = ExtResource( 3 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-text = ">"
-
-[node name="ExitButton" type="Label" parent="MainCContainer/MainVContainer/OptionsCContainer/OptionsVContainer/ExitCContainer/ExitHContainer"]
-margin_left = 31.0
-margin_right = 334.0
-margin_bottom = 74.0
-rect_min_size = Vector2( 303, 0 )
-custom_fonts/font = ExtResource( 3 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-text = "Salir"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="IntroMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
@@ -122,8 +41,72 @@ autoplay = true
 follow_viewport_enable = true
 
 [node name="TCReffect" parent="CanvasLayer" instance=ExtResource( 7 )]
-margin_right = 1996.0
-margin_bottom = 1131.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 0.0
+margin_bottom = 0.0
+mouse_filter = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 1
+
+[node name="Menu" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 100.0
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Buttons" type="VBoxContainer" parent="Menu"]
+margin_top = 50.0
+margin_right = 314.0
+margin_bottom = 1080.0
+mouse_filter = 2
+alignment = 1
+
+[node name="NewGameButton" type="Button" parent="Menu/Buttons"]
+margin_top = 370.0
+margin_right = 314.0
+margin_bottom = 464.0
+custom_colors/font_color_focus = Color( 0.901961, 0.556863, 0.207843, 1 )
+custom_colors/font_color_hover = Color( 0.901961, 0.556863, 0.207843, 1 )
+custom_fonts/font = ExtResource( 3 )
+custom_styles/focus = SubResource( 1 )
+text = "Nuevo Juego"
+flat = true
+align = 0
+
+[node name="TutorialButton" type="Button" parent="Menu/Buttons"]
+margin_top = 468.0
+margin_right = 314.0
+margin_bottom = 562.0
+custom_colors/font_color_focus = Color( 0.901961, 0.556863, 0.207843, 1 )
+custom_colors/font_color_hover = Color( 0.901961, 0.556863, 0.207843, 1 )
+custom_fonts/font = ExtResource( 3 )
+custom_styles/focus = SubResource( 2 )
+text = "Tutorial"
+flat = true
+align = 0
+
+[node name="ExitButton" type="Button" parent="Menu/Buttons"]
+margin_top = 566.0
+margin_right = 314.0
+margin_bottom = 660.0
+custom_colors/font_color_focus = Color( 0.901961, 0.556863, 0.207843, 1 )
+custom_colors/font_color_hover = Color( 0.901961, 0.556863, 0.207843, 1 )
+custom_fonts/font = ExtResource( 3 )
+custom_styles/focus = SubResource( 2 )
+text = "Salir"
+flat = true
+align = 0
+
+[connection signal="focus_entered" from="Menu/Buttons/NewGameButton" to="." method="_on_NewGameButton_focus_entered"]
+[connection signal="pressed" from="Menu/Buttons/NewGameButton" to="." method="_on_NewGameButton_pressed"]
+[connection signal="focus_entered" from="Menu/Buttons/TutorialButton" to="." method="_on_TutorialButton_focus_entered"]
+[connection signal="pressed" from="Menu/Buttons/TutorialButton" to="." method="_on_TutorialButton_pressed"]
+[connection signal="focus_entered" from="Menu/Buttons/ExitButton" to="." method="_on_ExitButton_focus_entered"]
+[connection signal="pressed" from="Menu/Buttons/ExitButton" to="." method="_on_ExitButton_pressed"]

@@ -3,6 +3,6 @@
 [ext_resource path="res://Assets/Fonts/TitilliumWeb-Regular.ttf" type="DynamicFontData" id=1]
 
 [resource]
-size = 48
+size = 57
 use_filter = true
 font_data = ExtResource( 1 )
