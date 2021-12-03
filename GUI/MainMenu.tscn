@@ -2,17 +2,16 @@
 
 [ext_resource path="res://GUI/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Scenes/World.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Assets/Fonts/Titillium_font.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Assets/Scenes/Buttons/TutorialButton.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/Scenes/Buttons/NewGameButton.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/Images/Cubert&enemies_6b.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Sounds/Music/Welcome to the Jungle.wav" type="AudioStream" id=6]
 [ext_resource path="res://Assets/Scenes/TCReffect.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Assets/Scenes/TutorialPlaceholder.tscn" type="PackedScene" id=8]
-
-[sub_resource type="StyleBoxEmpty" id=1]
-
-[sub_resource type="StyleBoxEmpty" id=2]
+[ext_resource path="res://Assets/Scenes/Buttons/ExitButton.tscn" type="PackedScene" id=9]
 
 [node name="MainMenu" type="Control"]
+pause_mode = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
@@ -62,47 +61,32 @@ __meta__ = {
 }
 
 [node name="Buttons" type="VBoxContainer" parent="Menu"]
-margin_right = 314.0
+margin_right = 423.0
 margin_bottom = 1080.0
 mouse_filter = 2
 alignment = 1
 
-[node name="NewGameButton" type="Button" parent="Menu/Buttons"]
-margin_top = 395.0
-margin_right = 314.0
-margin_bottom = 489.0
-custom_styles/focus = SubResource( 1 )
-custom_fonts/font = ExtResource( 3 )
-custom_colors/font_color_hover = Color( 0.901961, 0.556863, 0.207843, 1 )
-text = "Nuevo Juego"
-flat = true
-align = 0
+[node name="NewGameButton" parent="Menu/Buttons" instance=ExtResource( 4 )]
+margin_top = 450.0
+margin_right = 423.0
+margin_bottom = 507.0
+rect_min_size = Vector2( 0, 0 )
 
-[node name="TutorialButton" type="Button" parent="Menu/Buttons"]
-margin_top = 493.0
-margin_right = 314.0
-margin_bottom = 587.0
-custom_styles/focus = SubResource( 2 )
-custom_fonts/font = ExtResource( 3 )
-custom_colors/font_color_hover = Color( 0.901961, 0.556863, 0.207843, 1 )
-text = "Tutorial"
-flat = true
-align = 0
+[node name="TutorialButton" parent="Menu/Buttons" instance=ExtResource( 3 )]
+margin_top = 511.0
+margin_right = 423.0
+margin_bottom = 568.0
+rect_min_size = Vector2( 0, 0 )
 
-[node name="ExitButton" type="Button" parent="Menu/Buttons"]
-margin_top = 591.0
-margin_right = 314.0
-margin_bottom = 685.0
-custom_styles/focus = SubResource( 2 )
-custom_fonts/font = ExtResource( 3 )
-custom_colors/font_color_hover = Color( 0.901961, 0.556863, 0.207843, 1 )
-text = "Salir"
-flat = true
-align = 0
+[node name="ExitButton" parent="Menu/Buttons" instance=ExtResource( 9 )]
+margin_top = 572.0
+margin_right = 423.0
+margin_bottom = 629.0
+rect_min_size = Vector2( 0, 0 )
 
-[connection signal="focus_entered" from="Menu/Buttons/NewGameButton" to="." method="_on_NewGameButton_focus_entered"]
+[connection signal="mouse_entered" from="Menu/Buttons/NewGameButton" to="." method="_on_NewGameButton_mouse_entered"]
 [connection signal="pressed" from="Menu/Buttons/NewGameButton" to="." method="_on_NewGameButton_pressed"]
-[connection signal="focus_entered" from="Menu/Buttons/TutorialButton" to="." method="_on_TutorialButton_focus_entered"]
+[connection signal="mouse_entered" from="Menu/Buttons/TutorialButton" to="." method="_on_TutorialButton_mouse_entered"]
 [connection signal="pressed" from="Menu/Buttons/TutorialButton" to="." method="_on_TutorialButton_pressed"]
-[connection signal="focus_entered" from="Menu/Buttons/ExitButton" to="." method="_on_ExitButton_focus_entered"]
+[connection signal="mouse_entered" from="Menu/Buttons/ExitButton" to="." method="_on_ExitButton_mouse_entered"]
 [connection signal="pressed" from="Menu/Buttons/ExitButton" to="." method="_on_ExitButton_pressed"]

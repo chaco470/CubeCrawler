@@ -13,10 +13,6 @@ func _ready():
 		intro_music.play()
 	new_game_button.grab_focus()
 
-func _process(delta):
-	if (!new_game_button.has_focus() && !tutorial_button.has_focus() && !exit_button.has_focus()):
-		new_game_button.grab_focus()
-
 func _on_NewGameButton_pressed():
 	get_tree().change_scene_to(first_level_scene)
 
