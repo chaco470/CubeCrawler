@@ -6,9 +6,11 @@ export (PackedScene) var main_menu_scene
 onready var new_game_button = $Botones/DeathNewGameButton
 onready var main_menu_button = $Botones/DeathMainMenuButton
 onready var exit_button = $Botones/DeathExitButton
+onready var game_over_music = $GameOver
 
-func _ready():
-	pass # Replace with function body.
+func _physics_process(delta):
+	if !game_over_music.playing:
+		game_over_music.play()
 
 func _on_DeathNewGameButton_pressed():
 	get_tree().change_scene_to(first_level_scene)

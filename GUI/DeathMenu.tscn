@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Assets/Scenes/Buttons/DeathNewGameButton.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Scenes/Buttons/DeathMainMenuButton.tscn" type="PackedScene" id=2]
@@ -6,6 +6,9 @@
 [ext_resource path="res://Assets/Scripts/DeathMenu.gd" type="Script" id=4]
 [ext_resource path="res://Assets/Scenes/World.tscn" type="PackedScene" id=5]
 [ext_resource path="res://GUI/MainMenu.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/Sounds/Music/Game_Over.wav" type="AudioStream" id=7]
+[ext_resource path="res://Assets/Images/dead.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Images/LuzFInal.png" type="Texture" id=9]
 
 [node name="DeathMenu" type="Control"]
 anchor_right = 1.0
@@ -17,10 +20,22 @@ __meta__ = {
 first_level_scene = ExtResource( 5 )
 main_menu_scene = ExtResource( 6 )
 
-[node name="Fondo" type="ColorRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = -104.65
+margin_top = -2.37842
+margin_right = 1805.35
+margin_bottom = 998.622
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Fondo" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0, 0, 0, 0.960784 )
+margin_left = -107.029
+margin_right = -107.029
+texture = ExtResource( 9 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -30,10 +45,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -535.5
-margin_top = -164.5
-margin_right = 535.5
-margin_bottom = 203.5
+margin_left = -502.581
+margin_top = -395.427
+margin_right = 568.419
+margin_bottom = -27.4272
 alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -53,6 +68,11 @@ margin_bottom = 244.0
 margin_top = 248.0
 margin_right = 1071.0
 margin_bottom = 368.0
+
+[node name="GameOver" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+volume_db = -35.0
+autoplay = true
 
 [connection signal="mouse_entered" from="Botones/DeathNewGameButton" to="." method="_on_DeathNewGameButton_mouse_entered"]
 [connection signal="pressed" from="Botones/DeathNewGameButton" to="." method="_on_DeathNewGameButton_pressed"]
