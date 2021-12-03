@@ -2,6 +2,7 @@ extends Control
 
 onready var main_menu_scene = "res://GUI/MainMenu.tscn"
 onready var continue_button = $Botones/PauseContinueButton
+onready var restart_button = $Botones/PauseRestartButton
 onready var main_menu_button = $Botones/PauseMainMenuButton
 onready var exit_button = $Botones/PauseExitButton
 
@@ -35,3 +36,12 @@ func _on_PauseMainMenuButton_mouse_entered():
 
 func _on_PauseExitButton_mouse_entered():
 	exit_button.grab_focus()
+
+
+func _on_PauseRestartButton_pressed():
+	get_tree().paused = false
+	get_tree().reload_current_scene()
+
+
+func _on_PauseRestartButton_mouse_entered():
+	restart_button.grab_focus()
