@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Assets/Scenes/Buttons/DeathNewGameButton.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Scenes/Buttons/DeathMainMenuButton.tscn" type="PackedScene" id=2]
@@ -9,6 +9,43 @@
 [ext_resource path="res://Assets/Sounds/Music/Game_Over.wav" type="AudioStream" id=7]
 [ext_resource path="res://Assets/Images/dead.png" type="Texture" id=8]
 [ext_resource path="res://Assets/Images/LuzFInal.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Scenes/TCReffect.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Assets/Images/texure_rect.png" type="Texture" id=11]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+
+uniform float scan_line_count : hint_range(0, 1080) = 50.0;
+
+vec2 uv_curve(vec2 uv){
+	
+	uv = (uv-0.5) * 2.0;
+	
+	uv.x *= 1.0 + pow(abs(uv.y)/ 4.0, 2.0) ;
+	uv.y *= 1.0 + pow(abs(uv.x)/ 3.5, 2.0) ;
+	uv /= 1.1;
+	
+	uv = (uv/2.0) +0.5;
+	
+	return uv;
+}
+
+void fragment(){
+	float PI = 3.14159;
+	float r = texture(SCREEN_TEXTURE, uv_curve(SCREEN_UV) + vec2(SCREEN_PIXEL_SIZE.x * 0.0, 0.0)).r;
+	float g = texture(SCREEN_TEXTURE, uv_curve(SCREEN_UV) + vec2(SCREEN_PIXEL_SIZE.x * 2.0, 0.0)).g;
+	float b = texture(SCREEN_TEXTURE, uv_curve(SCREEN_UV) + vec2(SCREEN_PIXEL_SIZE.x * -2.0, 0.0)).b;
+	
+	float s = sin(uv_curve(SCREEN_UV).y * scan_line_count * PI * 2.0);
+	s = (s* 0.5 +0.5)* 0.9 + 0.1;
+	vec4 scan_line = vec4(vec3(pow(s, 0.25)), 1.0);
+	
+	COLOR = vec4(r,g,b, 1.0) * scan_line;
+}"
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 1 )
+shader_param/scan_line_count = 130.0
 
 [node name="DeathMenu" type="Control"]
 anchor_right = 1.0
@@ -19,6 +56,24 @@ __meta__ = {
 }
 first_level_scene = ExtResource( 5 )
 main_menu_scene = ExtResource( 6 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+follow_viewport_enable = true
+
+[node name="TCReffect" type="TextureRect" parent="CanvasLayer" instance=ExtResource( 10 )]
+material = SubResource( 2 )
+use_parent_material = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 11 )
+expand = true
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="TextureRect" type="TextureRect" parent="."]
 anchor_right = 1.0
