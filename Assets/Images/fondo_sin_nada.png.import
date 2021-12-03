@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Cubert&enemies_6b.png-b0a1559e600f369e4e0f595c1464e54a.stex"
+path="res://.import/fondo_sin_nada.png-ebd248fa3e016ce966d8cbe83172c771.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Images/Cubert&enemies_6b.png"
-dest_files=[ "res://.import/Cubert&enemies_6b.png-b0a1559e600f369e4e0f595c1464e54a.stex" ]
+source_file="res://Assets/Images/fondo_sin_nada.png"
+dest_files=[ "res://.import/fondo_sin_nada.png-ebd248fa3e016ce966d8cbe83172c771.stex" ]
 
 [params]
 

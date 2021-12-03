@@ -23,7 +23,7 @@
 [ext_resource path="res://Assets/Scenes/Passage.tscn" type="PackedScene" id=21]
 [ext_resource path="res://Assets/Rooms/RoomManager_6.tscn" type="PackedScene" id=22]
 [ext_resource path="res://Assets/Scenes/TCReffect.tscn" type="PackedScene" id=23]
-[ext_resource path="res://GUI/PauseMenu.tscn" type="PackedScene" id=24]
+[ext_resource path="res://Assets/Rooms/RoomManager_8.tscn" type="PackedScene" id=24]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
@@ -57,9 +57,6 @@ glow_hdr_threshold = 1.5
 
 [node name="Main" type="Node"]
 script = ExtResource( 9 )
-
-[node name="PauseCL" parent="." instance=ExtResource( 24 )]
-layer = 2
 
 [node name="GoldenRoom" parent="." instance=ExtResource( 15 )]
 
@@ -398,10 +395,57 @@ position = Vector2( -1216, -3984 )
 [node name="Enemy_melee_b2" parent="RoomManager_7" index="15"]
 position = Vector2( -2816, -3984 )
 
-[node name="BackgroundCL" type="CanvasLayer" parent="."]
+[node name="RoomManager_8" parent="." instance=ExtResource( 24 )]
+
+[node name="Puerta" parent="RoomManager_8" index="0"]
+position = Vector2( -3600, -1888 )
+
+[node name="TileMap" parent="RoomManager_8" index="1"]
+position = Vector2( -4512, -1888 )
+
+[node name="TileMap2" parent="RoomManager_8" index="2"]
+position = Vector2( -4512, -1888 )
+
+[node name="Enemy_explotion" parent="RoomManager_8" index="3"]
+position = Vector2( -5352, -2728 )
+
+[node name="Enemy_explotion2" parent="RoomManager_8" index="4"]
+position = Vector2( -5352, -1888 )
+
+[node name="Enemy_explotion3" parent="RoomManager_8" index="5"]
+position = Vector2( -5352, -1040 )
+
+[node name="Enemy_melee_b" parent="RoomManager_8" index="6"]
+position = Vector2( -4511.65, -2728 )
+
+[node name="Enemy_melee_b2" parent="RoomManager_8" index="7"]
+position = Vector2( -4632, -2176 )
+
+[node name="Enemy_melee_b3" parent="RoomManager_8" index="8"]
+position = Vector2( -4632, -1598.94 )
+
+[node name="Enemy_melee_b4" parent="RoomManager_8" index="9"]
+position = Vector2( -4512, -1040 )
+
+[node name="Enemy_shoot" parent="RoomManager_8" index="10"]
+position = Vector2( -3840, -2432 )
+
+[node name="Enemy_shoot4" parent="RoomManager_8" index="11"]
+position = Vector2( -4160, -2544 )
+
+[node name="Enemy_shoot5" parent="RoomManager_8" index="12"]
+position = Vector2( -4160, -1400 )
+
+[node name="Enemy_shoot2" parent="RoomManager_8" index="13"]
+position = Vector2( -3856, -1344 )
+
+[node name="Enemy_shoot3" parent="RoomManager_8" index="14"]
+position = Vector2( -4200, -1888 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -1
 
-[node name="Background" type="TextureRect" parent="BackgroundCL"]
+[node name="Background" type="TextureRect" parent="CanvasLayer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 0.749207
@@ -431,7 +475,6 @@ position = Vector2( 8070.07, -2281.11 )
 position = Vector2( 6787.99, -1683.84 )
 
 [node name="GUI" type="CanvasLayer" parent="."]
-layer = 3
 script = ExtResource( 13 )
 heart_scene = ExtResource( 14 )
 
@@ -449,7 +492,6 @@ __meta__ = {
 [node name="TCReffect" parent="GUI" instance=ExtResource( 23 )]
 margin_right = 2267.0
 margin_bottom = 1275.0
-mouse_filter = 2
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 2 )
@@ -484,6 +526,10 @@ rotation = 1.5708
 position = Vector2( -768, -1888 )
 rotation = 1.5708
 
+[node name="Passage9" parent="." instance=ExtResource( 21 )]
+position = Vector2( -3264, -1886.94 )
+rotation = 1.5708
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 3 )
 
@@ -495,3 +541,4 @@ environment = SubResource( 3 )
 [editable path="RoomManager_5"]
 [editable path="RoomManager_6"]
 [editable path="RoomManager_7"]
+[editable path="RoomManager_8"]
