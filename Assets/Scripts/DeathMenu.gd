@@ -26,7 +26,7 @@ func _on_DeathMainMenuButton_mouse_entered():
 	main_menu_button.grab_focus()
 
 func _on_DeathExitButton_pressed():
-	get_tree().quit
+	get_tree().quit()
 
 
 func _on_DeathExitButton_mouse_entered():
