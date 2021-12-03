@@ -36,11 +36,13 @@ func _follow_player(target):
 func _remove():
 	emit_signal("death")
 	queue_free()
-
 func hit(damage_to_take):
+	knockback()
 	hurt_sound.play()
 	vida -= damage_to_take
-
+func knockback():
+	move_and_slide(motion-motion*5) 
+	
 func _patrullar():
 	pass
 

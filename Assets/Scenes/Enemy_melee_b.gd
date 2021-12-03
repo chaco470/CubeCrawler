@@ -25,8 +25,11 @@ func _demage():
 		ia.target.notify_hit(-dmg)
 
 func hit(damage_to_take):
+	knockback()
 	hurt_sound.play()
 	vida -= damage_to_take
+func knockback():
+	move_and_slide(motion-motion*5) 
 
 func _follow_player(target):
 	if target != null:

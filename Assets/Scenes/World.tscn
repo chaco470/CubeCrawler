@@ -108,9 +108,15 @@ position = Vector2( 1312, -208 )
 
 [node name="Enemy_explotion" parent="RoomManager_1" index="11"]
 position = Vector2( -320, -208 )
+vida = 3
+dmg = 1
+velocity = 300.0
 
 [node name="Enemy_explotion2" parent="RoomManager_1" index="12"]
 position = Vector2( 1312, 1440 )
+vida = 3
+dmg = 1
+velocity = 300.0
 
 [node name="RoomManager_2" parent="." instance=ExtResource( 17 )]
 
@@ -149,9 +155,15 @@ position = Vector2( 199.7, -2144 )
 
 [node name="Enemy_explotion" parent="RoomManager_2" index="11"]
 position = Vector2( -336, -1064 )
+vida = 3
+dmg = 1
+velocity = 300.0
 
 [node name="Enemy_explotion2" parent="RoomManager_2" index="12"]
 position = Vector2( 1296, -2704 )
+vida = 3
+dmg = 1
+velocity = 300.0
 
 [node name="RoomManager_3" parent="." instance=ExtResource( 7 )]
 
@@ -190,12 +202,18 @@ position = Vector2( 1280, -4776 )
 
 [node name="Enemy_explotion" parent="RoomManager_3" index="11"]
 position = Vector2( 464, -4560 )
+vida = 3
+dmg = 1
+velocity = 300.0
 
 [node name="Enemy_melee_b4" parent="RoomManager_3" index="12"]
 position = Vector2( 488, -5096 )
 
 [node name="Enemy_explotion2" parent="RoomManager_3" index="13"]
 position = Vector2( 464, -4136 )
+vida = 3
+dmg = 1
+velocity = 300.0
 
 [node name="Enemy_melee_b5" parent="RoomManager_3" index="14"]
 position = Vector2( 1280, -3984 )
@@ -234,9 +252,15 @@ position = Vector2( -1752, -1616 )
 
 [node name="Enemy_explotion" parent="RoomManager_4" index="9"]
 position = Vector2( -2008, -2200 )
+vida = 3
+dmg = 1
+velocity = 300.0
 
 [node name="Enemy_explotion2" parent="RoomManager_4" index="10"]
 position = Vector2( -2016, -1584 )
+vida = 3
+dmg = 1
+velocity = 300.0
 
 [node name="Enemy_shoot2" parent="RoomManager_4" index="11"]
 position = Vector2( -1760, -2144 )
@@ -284,12 +308,18 @@ position = Vector2( 3360, 1024 )
 
 [node name="Enemy_explotion" parent="RoomManager_5" index="8"]
 position = Vector2( 3104, 616 )
+vida = 3
+dmg = 1
+velocity = 300.0
 
 [node name="Enemy_shoot3" parent="RoomManager_5" index="9"]
 position = Vector2( 2568, 1088 )
 
 [node name="Enemy_explotion2" parent="RoomManager_5" index="10"]
 position = Vector2( 3696, -208 )
+vida = 3
+dmg = 1
+velocity = 300.0
 
 [node name="Enemy_shoot4" parent="RoomManager_5" index="11"]
 position = Vector2( 3000, 1400 )
@@ -322,15 +352,27 @@ position = Vector2( -2016, 448 )
 
 [node name="Enemy_explotion" parent="RoomManager_6" index="8"]
 position = Vector2( -2880, 8 )
+vida = 3
+dmg = 1
+velocity = 300.0
 
 [node name="Enemy_explotion3" parent="RoomManager_6" index="9"]
 position = Vector2( -1408, -248 )
+vida = 3
+dmg = 1
+velocity = 300.0
 
 [node name="Enemy_explotion5" parent="RoomManager_6" index="10"]
 position = Vector2( -1152, 1224 )
+vida = 3
+dmg = 1
+velocity = 300.0
 
 [node name="Enemy_explotion7" parent="RoomManager_6" index="11"]
 position = Vector2( -2624, 1480 )
+vida = 3
+dmg = 1
+velocity = 300.0
 
 [node name="Enemy_melee_b" parent="RoomManager_6" index="12"]
 position = Vector2( -2880, 1216 )
@@ -381,12 +423,18 @@ position = Vector2( -1216, -4776 )
 
 [node name="Enemy_explotion" parent="RoomManager_7" index="11"]
 position = Vector2( -2024, -4568 )
+vida = 3
+dmg = 1
+velocity = 300.0
 
 [node name="Enemy_melee_b4" parent="RoomManager_7" index="12"]
 position = Vector2( -1216, -3984 )
 
 [node name="Enemy_explotion2" parent="RoomManager_7" index="13"]
 position = Vector2( -2024, -4144 )
+vida = 3
+dmg = 1
+velocity = 300.0
 
 [node name="Enemy_melee_b5" parent="RoomManager_7" index="14"]
 position = Vector2( -1216, -3984 )
@@ -425,6 +473,9 @@ position = Vector2( 8070.07, -2281.11 )
 
 [node name="Enemy_explotion" parent="." instance=ExtResource( 11 )]
 position = Vector2( 6787.99, -1683.84 )
+vida = 3
+dmg = 1
+velocity = 300.0
 
 [node name="GUI" type="CanvasLayer" parent="."]
 script = ExtResource( 13 )

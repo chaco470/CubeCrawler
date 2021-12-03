@@ -28,9 +28,12 @@ func _play_animation(animation_name:String, should_restart:bool = true, playback
 		player_animation.play(animation_name)
 
 func hit(damage_to_take):
+	knockback()
 	hurt_sound.play()
 	vida -= damage_to_take
-
+func knockback():
+	move_and_slide(motion-motion*5) 
+	
 func _remove():
 	emit_signal("death")
 	queue_free()

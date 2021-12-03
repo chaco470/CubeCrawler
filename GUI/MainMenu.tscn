@@ -62,44 +62,40 @@ __meta__ = {
 }
 
 [node name="Buttons" type="VBoxContainer" parent="Menu"]
-margin_top = 50.0
 margin_right = 314.0
 margin_bottom = 1080.0
 mouse_filter = 2
 alignment = 1
 
 [node name="NewGameButton" type="Button" parent="Menu/Buttons"]
-margin_top = 370.0
+margin_top = 395.0
 margin_right = 314.0
-margin_bottom = 464.0
-custom_colors/font_color_focus = Color( 0.901961, 0.556863, 0.207843, 1 )
-custom_colors/font_color_hover = Color( 0.901961, 0.556863, 0.207843, 1 )
-custom_fonts/font = ExtResource( 3 )
+margin_bottom = 489.0
 custom_styles/focus = SubResource( 1 )
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color_hover = Color( 0.901961, 0.556863, 0.207843, 1 )
 text = "Nuevo Juego"
 flat = true
 align = 0
 
 [node name="TutorialButton" type="Button" parent="Menu/Buttons"]
-margin_top = 468.0
+margin_top = 493.0
 margin_right = 314.0
-margin_bottom = 562.0
-custom_colors/font_color_focus = Color( 0.901961, 0.556863, 0.207843, 1 )
-custom_colors/font_color_hover = Color( 0.901961, 0.556863, 0.207843, 1 )
-custom_fonts/font = ExtResource( 3 )
+margin_bottom = 587.0
 custom_styles/focus = SubResource( 2 )
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color_hover = Color( 0.901961, 0.556863, 0.207843, 1 )
 text = "Tutorial"
 flat = true
 align = 0
 
 [node name="ExitButton" type="Button" parent="Menu/Buttons"]
-margin_top = 566.0
+margin_top = 591.0
 margin_right = 314.0
-margin_bottom = 660.0
-custom_colors/font_color_focus = Color( 0.901961, 0.556863, 0.207843, 1 )
-custom_colors/font_color_hover = Color( 0.901961, 0.556863, 0.207843, 1 )
-custom_fonts/font = ExtResource( 3 )
+margin_bottom = 685.0
 custom_styles/focus = SubResource( 2 )
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color_hover = Color( 0.901961, 0.556863, 0.207843, 1 )
 text = "Salir"
 flat = true
 align = 0
