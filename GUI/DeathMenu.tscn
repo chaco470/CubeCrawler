@@ -58,5 +58,5 @@ margin_bottom = 368.0
 [connection signal="pressed" from="Botones/DeathNewGameButton" to="." method="_on_DeathNewGameButton_pressed"]
 [connection signal="mouse_entered" from="Botones/DeathMainMenuButton" to="." method="_on_DeathMainMenuButton_mouse_entered"]
 [connection signal="pressed" from="Botones/DeathMainMenuButton" to="." method="_on_DeathMainMenuButton_pressed"]
-[connection signal="mouse_entered" from="Botones/DeathExitButton" to="." method="_on_PauseExitButton_mouse_entered"]
-[connection signal="pressed" from="Botones/DeathExitButton" to="." method="_on_PauseExitButton_pressed"]
+[connection signal="mouse_entered" from="Botones/DeathExitButton" to="." method="_on_DeathExitButton_mouse_entered"]
+[connection signal="pressed" from="Botones/DeathExitButton" to="." method="_on_DeathExitButton_pressed"]
