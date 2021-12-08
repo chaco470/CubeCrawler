@@ -1,7 +1,6 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Assets/Scenes/Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Assets/Scenes/Enemy_shoot.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Images/Background.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Images/Tile-1-03.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Scripts/CrossAir.gd" type="Script" id=5]
@@ -9,8 +8,6 @@
 [ext_resource path="res://Assets/Rooms/RoomManager_3.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Assets/Rooms/RoomManager_4.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Assets/Scripts/World.gd" type="Script" id=9]
-[ext_resource path="res://Assets/Scenes/Enemy_melee_b.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Assets/Scenes/Enemy_explotion.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Assets/Rooms/RoomManager_1.tscn" type="PackedScene" id=12]
 [ext_resource path="res://GUI/GUI_layer.gd" type="Script" id=13]
 [ext_resource path="res://GUI/LifeTexture.tscn" type="PackedScene" id=14]
@@ -65,16 +62,30 @@ layer = 2
 [node name="GoldenRoom" parent="." instance=ExtResource( 15 )]
 
 [node name="TileMap" parent="GoldenRoom" index="0"]
-position = Vector2( 2336, -2176 )
+position = Vector2( -5295.99, -4350.9 )
 
 [node name="ItemSpawner" parent="GoldenRoom" index="1"]
 items = [ ExtResource( 19 ), ExtResource( 18 ), ExtResource( 20 ) ]
 
 [node name="Area2D" parent="GoldenRoom/ItemSpawner" index="0"]
-position = Vector2( 2944, -1856 )
+position = Vector2( -4687.99, -4030.9 )
 
 [node name="Position2D" parent="GoldenRoom/ItemSpawner" index="1"]
-position = Vector2( 2944, -1856 )
+position = Vector2( -4687.99, -4030.9 )
+
+[node name="GoldenRoom2" parent="." instance=ExtResource( 15 )]
+
+[node name="TileMap" parent="GoldenRoom2" index="0"]
+position = Vector2( 2336, -2165.32 )
+
+[node name="ItemSpawner" parent="GoldenRoom2" index="1"]
+items = [ ExtResource( 19 ), ExtResource( 18 ), ExtResource( 20 ) ]
+
+[node name="Area2D" parent="GoldenRoom2/ItemSpawner" index="0"]
+position = Vector2( -4687.99, -4030.9 )
+
+[node name="Position2D" parent="GoldenRoom2/ItemSpawner" index="1"]
+position = Vector2( 2934.35, -1790.02 )
 
 [node name="RoomManager_1" parent="." instance=ExtResource( 12 )]
 
@@ -137,25 +148,28 @@ position = Vector2( 480, -2800 )
 [node name="Enemy_melee_b2" parent="RoomManager_2" index="5"]
 position = Vector2( 240, -1640 )
 
-[node name="Enemy_melee_b3" parent="RoomManager_2" index="6"]
+[node name="Enemy_melee_b5" parent="RoomManager_2" index="6"]
+position = Vector2( -1674.11, 249.572 )
+
+[node name="Enemy_melee_b3" parent="RoomManager_2" index="7"]
 position = Vector2( 1296, -1064 )
 
-[node name="Enemy_melee_b4" parent="RoomManager_2" index="7"]
+[node name="Enemy_melee_b4" parent="RoomManager_2" index="8"]
 position = Vector2( -336, -2704 )
 
-[node name="Enemy_melee_b6" parent="RoomManager_2" index="8"]
+[node name="Enemy_melee_b6" parent="RoomManager_2" index="9"]
 position = Vector2( 712, -2144 )
 
-[node name="Enemy_shoot" parent="RoomManager_2" index="9"]
+[node name="Enemy_shoot" parent="RoomManager_2" index="10"]
 position = Vector2( 712, -1640 )
 
-[node name="Enemy_shoot2" parent="RoomManager_2" index="10"]
+[node name="Enemy_shoot2" parent="RoomManager_2" index="11"]
 position = Vector2( 199.7, -2144 )
 
-[node name="Enemy_explotion" parent="RoomManager_2" index="11"]
+[node name="Enemy_explotion" parent="RoomManager_2" index="12"]
 position = Vector2( -336, -1064 )
 
-[node name="Enemy_explotion2" parent="RoomManager_2" index="12"]
+[node name="Enemy_explotion2" parent="RoomManager_2" index="13"]
 position = Vector2( 1296, -2704 )
 
 [node name="RoomManager_3" parent="." instance=ExtResource( 7 )]
@@ -210,56 +224,65 @@ position = Vector2( -320, -3984 )
 
 [node name="RoomManager_4" parent="." instance=ExtResource( 8 )]
 
-[node name="RoomBase" parent="RoomManager_4" index="0"]
+[node name="Enemy_melee_b9" parent="RoomManager_4" index="0"]
+position = Vector2( 989.932, -2362.32 )
+
+[node name="RoomBase" parent="RoomManager_4" index="1"]
 position = Vector2( -2016, -1888 )
 
-[node name="TileMap2" parent="RoomManager_4" index="1"]
+[node name="TileMap2" parent="RoomManager_4" index="2"]
 position = Vector2( -2016, -1888 )
 
-[node name="Puerta" parent="RoomManager_4" index="2"]
+[node name="Puerta" parent="RoomManager_4" index="3"]
 position = Vector2( -2016, -2800 )
 
-[node name="Puerta2" parent="RoomManager_4" index="3"]
+[node name="Puerta2" parent="RoomManager_4" index="4"]
 position = Vector2( -1104, -1888 )
 
-[node name="Puerta3" parent="RoomManager_4" index="4"]
+[node name="Puerta3" parent="RoomManager_4" index="5"]
 position = Vector2( -2016, -976 )
 
-[node name="Puerta4" parent="RoomManager_4" index="5"]
+[node name="Puerta4" parent="RoomManager_4" index="6"]
 position = Vector2( -2928, -1888 )
 
-[node name="Enemy_melee_b" parent="RoomManager_4" index="6"]
+[node name="Enemy_melee_b" parent="RoomManager_4" index="7"]
 position = Vector2( -2016, -1888 )
 
-[node name="Enemy_shoot" parent="RoomManager_4" index="7"]
+[node name="Enemy_shoot" parent="RoomManager_4" index="8"]
 position = Vector2( -2272, -1632 )
 
-[node name="Enemy_melee_b3" parent="RoomManager_4" index="8"]
+[node name="Enemy_melee_b3" parent="RoomManager_4" index="9"]
 position = Vector2( -1752, -1616 )
 
-[node name="Enemy_explotion" parent="RoomManager_4" index="9"]
+[node name="Enemy_explotion" parent="RoomManager_4" index="10"]
 position = Vector2( -2008, -2200 )
 
-[node name="Enemy_explotion2" parent="RoomManager_4" index="10"]
+[node name="Enemy_explotion2" parent="RoomManager_4" index="11"]
 position = Vector2( -2016, -1584 )
 
-[node name="Enemy_shoot2" parent="RoomManager_4" index="11"]
+[node name="Enemy_shoot2" parent="RoomManager_4" index="12"]
 position = Vector2( -1760, -2144 )
 
-[node name="Enemy_shoot3" parent="RoomManager_4" index="12"]
+[node name="Enemy_shoot3" parent="RoomManager_4" index="13"]
 position = Vector2( -1312, -1184 )
 
-[node name="Enemy_shoot4" parent="RoomManager_4" index="13"]
+[node name="Enemy_shoot4" parent="RoomManager_4" index="14"]
 position = Vector2( -2720, -2592 )
 
-[node name="Enemy_melee_b2" parent="RoomManager_4" index="14"]
+[node name="Enemy_melee_b2" parent="RoomManager_4" index="15"]
 position = Vector2( -2264, -2168 )
 
-[node name="Enemy_melee_b4" parent="RoomManager_4" index="15"]
+[node name="Enemy_melee_b4" parent="RoomManager_4" index="16"]
 position = Vector2( -1304, -2592 )
 
-[node name="Enemy_melee_b5" parent="RoomManager_4" index="16"]
+[node name="Enemy_melee_b5" parent="RoomManager_4" index="17"]
 position = Vector2( -2720, -1184 )
+
+[node name="Enemy_melee_b6" parent="RoomManager_4" index="18"]
+position = Vector2( -1472.17, -1347.82 )
+
+[node name="Enemy_melee_b10" parent="RoomManager_4" index="21"]
+position = Vector2( -1656.22, 956.498 )
 
 [node name="RoomManager_5" parent="." instance=ExtResource( 16 )]
 
@@ -406,6 +429,7 @@ position = Vector2( -3600, -1888 )
 
 [node name="TileMap" parent="RoomManager_8" index="1"]
 position = Vector2( -4512, -1888 )
+tile_data = PoolIntArray( -1835037, 1, 0, -1835036, 1, 0, -1835035, 1, 0, -1835034, 1, 0, -1835033, 1, 0, -1835032, 1, 0, -1835031, 1, 0, -1835030, 1, 0, -1835029, 1, 0, -1835028, 1, 0, -1835027, 1, 0, -1835026, 1, 0, -1835025, 1, 0, -1835024, 1, 0, -1835023, 1, 0, -1835022, 1, 0, -1835021, 1, 0, -1835020, 1, 0, -1835019, 1, 0, -1835018, 1, 0, -1835017, 1, 0, -1835016, 1, 0, -1900542, 1, 0, -1900541, 1, 0, -1900540, 1, 0, -1900539, 1, 0, -1900538, 1, 0, -1900537, 1, 0, -1900536, 1, 0, -1900535, 1, 0, -1900534, 1, 0, -1900533, 1, 0, -1900532, 1, 0, -1900531, 1, 0, -1900530, 1, 0, -1900529, 1, 0, -1900528, 1, 0, -1900527, 1, 0, -1900526, 1, 0, -1900525, 1, 0, -1900524, 1, 0, -1900523, 1, 0, -1900522, 1, 0, -1900521, 1, 0, -1900520, 1, 0, -1900519, 1, 0, -1900518, 1, 0, -1900517, 1, 0, -1900516, 1, 0, -1769501, 1, 0, -1834980, 1, 0, -1703965, 1, 0, -1769444, 1, 0, -1638429, 1, 0, -1703908, 1, 0, -1572893, 1, 0, -1638372, 1, 0, -1507357, 1, 0, -1572836, 1, 0, -1441821, 1, 0, -1507300, 1, 0, -1376285, 1, 0, -1441764, 1, 0, -1310749, 1, 0, -1376228, 1, 0, -1245213, 1, 0, -1310692, 1, 0, -1179677, 1, 0, -1245156, 1, 0, -1114141, 1, 0, -1179620, 1, 0, -1048605, 1, 0, -1114084, 1, 0, -983069, 1, 0, -1048548, 1, 0, -917533, 1, 0, -983012, 1, 0, -851997, 1, 0, -917476, 1, 0, -786461, 1, 0, -851940, 1, 0, -720925, 1, 0, -786404, 1, 0, -655389, 1, 0, -720868, 1, 0, -589853, 1, 0, -655332, 1, 0, -524317, 1, 0, -589796, 1, 0, -458781, 1, 0, -524260, 1, 0, -393245, 1, 0, -458724, 1, 0, -327709, 1, 0, -393188, 1, 0, -262173, 1, 0, -327652, 1, 0, -196637, 1, 0, -262116, 1, 0, -131101, 1, 0, -196580, 1, 0, 196579, 1, 0, 131100, 1, 0, 262115, 1, 0, 196636, 1, 0, 327651, 1, 0, 262172, 1, 0, 393187, 1, 0, 327708, 1, 0, 458723, 1, 0, 393244, 1, 0, 524259, 1, 0, 458780, 1, 0, 589795, 1, 0, 524316, 1, 0, 655331, 1, 0, 589852, 1, 0, 720867, 1, 0, 655388, 1, 0, 786403, 1, 0, 720924, 1, 0, 851939, 1, 0, 786460, 1, 0, 917475, 1, 0, 851996, 1, 0, 983011, 1, 0, 917532, 1, 0, 1048547, 1, 0, 983068, 1, 0, 1114083, 1, 0, 1048604, 1, 0, 1179619, 1, 0, 1114140, 1, 0, 1245155, 1, 0, 1179676, 1, 0, 1310691, 1, 0, 1245212, 1, 0, 1376227, 1, 0, 1310748, 1, 0, 1441763, 1, 0, 1376284, 1, 0, 1507299, 1, 0, 1441820, 1, 0, 1572835, 1, 0, 1507356, 1, 0, 1638371, 1, 0, 1572892, 1, 0, 1703907, 1, 0, 1638428, 1, 0, 1769443, 1, 0, 1703964, 1, 0, 1834979, 1, 0, 1769500, 1, 0, 1900515, 1, 0, 1900516, 1, 0, 1900517, 1, 0, 1900518, 1, 0, 1900519, 1, 0, 1900520, 1, 0, 1900521, 1, 0, 1900522, 1, 0, 1900523, 1, 0, 1900524, 1, 0, 1900525, 1, 0, 1900526, 1, 0, 1900527, 1, 0, 1900528, 1, 0, 1900529, 1, 0, 1900530, 1, 0, 1900531, 1, 0, 1900532, 1, 0, 1900533, 1, 0, 1900534, 1, 0, 1900535, 1, 0, 1900536, 1, 0, 1900537, 1, 0, 1900538, 1, 0, 1900539, 1, 0, 1900540, 1, 0, 1900541, 1, 0, 1835010, 1, 0, 1835011, 1, 0, 1835012, 1, 0, 1835013, 1, 0, 1835014, 1, 0, 1835015, 1, 0, 1835016, 1, 0, 1835017, 1, 0, 1835018, 1, 0, 1835019, 1, 0, 1835020, 1, 0, 1835021, 1, 0, 1835022, 1, 0, 1835023, 1, 0, 1835024, 1, 0, 1835025, 1, 0, 1835026, 1, 0, 1835027, 1, 0, 1835028, 1, 0, 1835029, 1, 0, 1835030, 1, 0, 1835031, 1, 0, 1835032, 1, 0, 1835033, 1, 0, 1835034, 1, 0, 1835035, 1, 0, 1835036, 1, 0 )
 
 [node name="TileMap2" parent="RoomManager_8" index="2"]
 position = Vector2( -4512, -1888 )
@@ -469,15 +493,6 @@ position = Vector2( 480, 600 )
 script = ExtResource( 5 )
 crossAir = ExtResource( 6 )
 
-[node name="Enemy_shoot" parent="." instance=ExtResource( 2 )]
-position = Vector2( 6656, -2464 )
-
-[node name="Enemy_melee_b" parent="." instance=ExtResource( 10 )]
-position = Vector2( 8070.07, -2281.11 )
-
-[node name="Enemy_explotion" parent="." instance=ExtResource( 11 )]
-position = Vector2( 6787.99, -1683.84 )
-
 [node name="GUI" type="CanvasLayer" parent="."]
 layer = 4
 script = ExtResource( 13 )
@@ -503,7 +518,7 @@ mouse_filter = 2
 tile_set = SubResource( 2 )
 cell_size = Vector2( 32, 32 )
 format = 1
-tile_data = PoolIntArray( -5767151, 0, 0, -1703924, 0, 0, -1703919, 0, 0 )
+tile_data = PoolIntArray( -6422677, 0, 0, -6422673, 0, 0, -6357141, 0, 0, -6357137, 0, 0, -6291605, 0, 0, -6291601, 0, 0, -6226069, 0, 0, -6226065, 0, 0, -6160533, 0, 0, -6160529, 0, 0, -6094997, 0, 0, -6094993, 0, 0, -6029461, 0, 0, -6029457, 0, 0, -5963925, 0, 0, -5963921, 0, 0, -5898389, 0, 0, -5898385, 0, 0, -5832853, 0, 0, -5832849, 0, 0, -5767317, 0, 0, -5767313, 0, 0, -5701781, 0, 0, -5701777, 0, 0, -5701776, 0, 0, -5767151, 0, 0, -1703924, 0, 0, -1703919, 0, 0 )
 
 [node name="Passage" parent="." instance=ExtResource( 21 )]
 position = Vector2( 480, -640 )
@@ -540,6 +555,7 @@ rotation = 1.5708
 environment = SubResource( 3 )
 
 [editable path="GoldenRoom"]
+[editable path="GoldenRoom2"]
 [editable path="RoomManager_1"]
 [editable path="RoomManager_2"]
 [editable path="RoomManager_3"]

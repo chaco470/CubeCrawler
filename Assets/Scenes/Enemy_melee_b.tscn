@@ -53,6 +53,7 @@ tracks/0/keys = {
 ]]
 modulate = Color( 1.5, 1.5, 1.5, 1 )
 script = ExtResource( 2 )
+vida = 8
 
 [node name="StateMachine" type="Node" parent="."]
 script = ExtResource( 5 )
