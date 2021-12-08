@@ -7,6 +7,7 @@ onready var explotion_wait_timer = $ExplotionWaitTimer
 var target = null
 var stateMachine = null
 var stopEngage = false
+var puedeExplotar = true
 func initialize(parent_given):
 	parent = parent_given
 	stateMachine = parent_given.state_machine
@@ -33,4 +34,7 @@ func _on_ExplotionTimer_timeout():
 	stopEngage = true
 
 func _on_ExplotionWhaitTimer_timeout():
-	parent._explode()
+	if puedeExplotar:
+		parent._explode()
+	else:
+		parent.queue_free()
