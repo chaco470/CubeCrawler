@@ -23,7 +23,7 @@ func _process(delta):
 	position += degree * bullet_speed * delta
 
 
-func _on_VisibilityNotifier2D_viewport_exited(viewport):
+func _on_VisibilityNotifier2D_viewport_exited():
 	queue_free()
 
 

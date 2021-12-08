@@ -10,7 +10,7 @@ var motion = Vector2.ZERO
 onready var bullet_spawn = $BulletSpawner
 onready var ia = $IA_shooter
 onready var state_machine = $StateMachine
-onready var player_detector = $Detector
+onready var player_detector = $IA_shooter/Detector
 onready var hurt_sound = $HurtAudio
 onready var shoot_sound = $ShootAudio
 onready var dead_sound = $DeadAudio
@@ -35,6 +35,7 @@ func _follow_player(target):
 		
 func _remove():
 	emit_signal("death")
+	$Hitbox/CollisionShape2D.disabled=true
 	queue_free()
 
 func hit(damage_to_take, knock):

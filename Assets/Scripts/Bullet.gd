@@ -5,6 +5,9 @@ var damage
 var degree
 export (PackedScene) var shoot_particle
 
+func _ready():
+	print("Bala lista pa mata")
+
 func initialize(rotation_given,spawn_position:Vector2, degree:Vector2):
 	self.degree = degree
 	self.rotation = rotation_given
@@ -13,18 +16,13 @@ func initialize(rotation_given,spawn_position:Vector2, degree:Vector2):
 	bullet_speed = BulletState.get_bullet_speed()
 	#set_wait_timer(BulletState.get_bullet_distance())
 	scale = BulletState.get_bullet_size()
-	
-	
 
-func _process(delta):
+func _physics_process(delta):
 	position += degree * bullet_speed * delta
+	print(global_position)
 
 func _on_Bullet_body_entered(body):
 	_destroy(body)
-
-
-func _on_VisibilityNotifier2D_viewport_exited(viewport):
-	queue_free()
 
 func _destroy(obj):
 	if obj.has_method("hit"):

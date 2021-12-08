@@ -58,7 +58,7 @@ vida = 8
 [node name="StateMachine" type="Node" parent="."]
 script = ExtResource( 5 )
 
-[node name="Patroll" type="Node" parent="StateMachine"]
+[node name="Patrol" type="Node" parent="StateMachine"]
 script = ExtResource( 7 )
 
 [node name="Engage" type="Node" parent="StateMachine"]

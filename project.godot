@@ -46,7 +46,8 @@ BulletState="*res://globals/BulletState.gd"
 
 window/size/width=1900
 window/size/height=1080
-window/size/fullscreen=true
+mouse_cursor/custom_image="res://Assets/Images/CrossAir-final.png"
+mouse_cursor/custom_image_hotspot=Vector2( 24, 24 )
 
 [input]
 
