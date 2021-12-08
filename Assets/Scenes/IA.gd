@@ -11,6 +11,7 @@ func initialize(parent_given):
 
 func _on_Engage():
 	parent._follow_player(target)
+	
 
 func _on_Detector_body_entered(body):
 	if body.is_in_group("player"):
