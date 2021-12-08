@@ -9,7 +9,5 @@ func _ready():
 	}
 
 
-		
-
 
 

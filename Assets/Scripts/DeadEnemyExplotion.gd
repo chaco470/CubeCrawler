@@ -1,7 +1,7 @@
 extends "res://Assets/Scripts/AbstractState.gd"
 
 
-func enter():	
+func enter():
 	parent.emit_signal("death")
 	parent.dead_sound.play()
 	parent._play_animation("dead")

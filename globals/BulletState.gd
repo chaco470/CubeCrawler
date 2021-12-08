@@ -21,7 +21,6 @@ func set_values(b_speed, b_size, b_distance, k_back, dmg):
 	bullet_distance += b_distance
 
 func get_bullet_speed():
-	print("bullet speed ----- ", bullet_speed)
 	return bullet_speed
 
 func get_bullet_size():
