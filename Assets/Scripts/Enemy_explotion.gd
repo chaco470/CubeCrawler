@@ -31,12 +31,13 @@ func _play_animation(anim_name:String):
 #		player_animation.playback_speed = playback_speed
 #		player_animation.play(animation_name)
 
-func hit(damage_to_take):
-	knockback()
+func hit(damage_to_take, knock):
+	knockback(knock)
 	hurt_sound.play()
 	vida -= damage_to_take
-func knockback():
-	move_and_slide(motion-motion*5) 
+
+func knockback(knock):
+	move_and_slide(motion-motion*knock) 
 	
 func _remove():
 	emit_signal("death")

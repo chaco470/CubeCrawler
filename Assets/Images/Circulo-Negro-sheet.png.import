@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/texto2.png-13f542b3d01e8d8c16446615b0aa568a.stex"
+path="res://.import/Circulo-Negro-sheet.png-c4f34f8b227d6e9f0134a5c38faf79bf.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Images/texto2.png"
-dest_files=[ "res://.import/texto2.png-13f542b3d01e8d8c16446615b0aa568a.stex" ]
+source_file="res://Assets/Images/Circulo-Negro-sheet.png"
+dest_files=[ "res://.import/Circulo-Negro-sheet.png-c4f34f8b227d6e9f0134a5c38faf79bf.stex" ]
 
 [params]
 

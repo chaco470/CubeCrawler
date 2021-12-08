@@ -12,3 +12,6 @@ func set_values(mxSpeed, cd, hta, siz):
 	cadencia_disparo = cd
 	health_to_add = hta
 	size = siz
+
+func set_bullet_values(b_speed, b_size, b_distance, k_back, dmg):
+	BulletState.set_values(b_speed, b_size, b_distance, k_back, dmg)

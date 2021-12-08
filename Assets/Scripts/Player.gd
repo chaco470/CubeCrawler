@@ -26,7 +26,7 @@ onready var shoot_audio = $ShootAudio
 func _ready():
 	state_machine.set_parent(self)
 	PlayerData.call_deferred("set_max_health", max_health)
-
+	BulletState.set_values(750, 1, 0, 5.0, 1)
 
 
 func get_input_axis():
@@ -69,7 +69,7 @@ func fire():
 		shoot_audio.play()
 		GlobalObjects.camera.shake(50)
 		var bullet_instance = bullet.instance()
-		bullet_instance.initialize(self.rotation,bullet_spawn.get_global_position(), global_position.direction_to(bullet_spawn.global_position), damage)
+		bullet_instance.initialize(self.rotation,bullet_spawn.get_global_position(), global_position.direction_to(bullet_spawn.global_position))
 		get_tree().get_root().call_deferred("add_child",bullet_instance)
 		can_shoot = false
 		cadencia_de_disparo.start()

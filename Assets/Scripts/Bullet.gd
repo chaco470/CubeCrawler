@@ -5,14 +5,14 @@ var damage
 var degree
 export (PackedScene) var shoot_particle
 
-
-
-	
-func initialize(rotation_given,spawn_position:Vector2, degree:Vector2, damage_to_make):
+func initialize(rotation_given,spawn_position:Vector2, degree:Vector2):
 	self.degree = degree
 	self.rotation = rotation_given
 	global_position = spawn_position
-	damage = damage_to_make
+	damage = BulletState.get_damage()
+	bullet_speed = BulletState.get_bullet_speed()
+	#set_wait_timer(BulletState.get_bullet_distance())
+	scale = BulletState.get_bullet_size()
 	
 	
 
@@ -28,13 +28,11 @@ func _on_VisibilityNotifier2D_viewport_exited(viewport):
 
 func _destroy(obj):
 	if obj.has_method("hit"):
-		obj.hit(damage)
+		obj.hit(damage, BulletState.get_knock_back())
 	var shoot_p = shoot_particle.instance() as Particles2D
 	get_parent().add_child(shoot_p)
 	shoot_p.position = self.global_position
 	shoot_p.rotation = self.rotation
-	print(shoot_p.position)
-	print(self.global_position)
 	queue_free()
 
 

@@ -24,12 +24,13 @@ func _demage():
 	if can_damage and ia.target != null:
 		ia.target.notify_hit(-dmg)
 
-func hit(damage_to_take):
-	knockback()
+func hit(damage_to_take, knock):
+	knockback(knock)
 	hurt_sound.play()
 	vida -= damage_to_take
-func knockback():
-	move_and_slide(motion-motion*5) 
+
+func knockback(knock):
+	move_and_slide(motion-motion*knock) 
 
 func _follow_player(target):
 	if target != null:
