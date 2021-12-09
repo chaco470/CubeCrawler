@@ -8,6 +8,7 @@ export (float) var velocity = 300
 onready var state_machine = $StateMachine
 onready var hurt_sound = $HurtAudio
 onready var dead_sound = $DeadAudio
+onready var explode_sound = $ExplodeAudio
 var motion = Vector2.ZERO
 var can_damage = false
 var explode_damage = false
