@@ -40,7 +40,7 @@ tracks/1/keys = {
 "values": [  ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=2]
 resource_name = "Explote1"
 length = 2.0
 tracks/0/type = "value"
@@ -104,7 +104,7 @@ script = ExtResource( 2 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Explote"
 anims/Explote = SubResource( 1 )
-anims/Explote1 = SubResource( 8 )
+anims/Explote1 = SubResource( 2 )
 anims/dead = SubResource( 3 )
 anims/engage = SubResource( 4 )
 
@@ -136,7 +136,6 @@ rotation = -1.5708
 texture = ExtResource( 1 )
 hframes = 7
 vframes = 6
-frame = 5
 
 [node name="EnemyCollider" type="CollisionShape2D" parent="."]
 visible = false
