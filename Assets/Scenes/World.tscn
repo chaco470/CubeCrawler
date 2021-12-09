@@ -1,8 +1,7 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Assets/Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Images/Background.png" type="Texture" id=3]
-[ext_resource path="res://Assets/Images/Tile-1-03.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Rooms/RoomManager_3.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Assets/Rooms/RoomManager_4.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Assets/Scripts/World.gd" type="Script" id=9]
@@ -11,7 +10,6 @@
 [ext_resource path="res://GUI/LifeTexture.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Assets/Scenes/GoldenRoom.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Assets/Rooms/RoomManager_5.tscn" type="PackedScene" id=16]
-[ext_resource path="res://Assets/Rooms/RoomManager_2.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Assets/Scenes/HealthUp.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Assets/Scenes/SizeDown.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Assets/Scenes/SpeedUp.tscn" type="PackedScene" id=20]
@@ -20,32 +18,6 @@
 [ext_resource path="res://Assets/Scenes/TCReffect.tscn" type="PackedScene" id=23]
 [ext_resource path="res://Assets/Rooms/RoomManager_8.tscn" type="PackedScene" id=24]
 [ext_resource path="res://GUI/PauseMenu.tscn" type="PackedScene" id=25]
-
-[sub_resource type="ConvexPolygonShape2D" id=1]
-points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
-
-[sub_resource type="TileSet" id=2]
-0/name = "Tile-1-03.png 0"
-0/texture = ExtResource( 4 )
-0/tex_offset = Vector2( 0, 0 )
-0/modulate = Color( 1, 1, 1, 1 )
-0/region = Rect2( 0, 0, 32, 32 )
-0/tile_mode = 0
-0/occluder_offset = Vector2( 0, 0 )
-0/navigation_offset = Vector2( 0, 0 )
-0/shape_offset = Vector2( 0, 0 )
-0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-0/shape = SubResource( 1 )
-0/shape_one_way = false
-0/shape_one_way_margin = 1.0
-0/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 1 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
-0/z_index = 0
 
 [sub_resource type="Environment" id=3]
 glow_enabled = true
@@ -87,199 +59,96 @@ position = Vector2( 2934.35, -1790.02 )
 
 [node name="RoomManager_1" parent="." instance=ExtResource( 12 )]
 
-[node name="Puerta" parent="RoomManager_1" index="0"]
-position = Vector2( 480, -304 )
-
-[node name="Puerta2" parent="RoomManager_1" index="1"]
+[node name="Puerta2" parent="RoomManager_1" index="0"]
 position = Vector2( 1392, 608 )
 
-[node name="Puerta3" parent="RoomManager_1" index="2"]
+[node name="Puerta3" parent="RoomManager_1" index="1"]
 position = Vector2( -432, 608 )
 
-[node name="TileMap" parent="RoomManager_1" index="3"]
+[node name="TileMap" parent="RoomManager_1" index="2"]
 position = Vector2( 480, 608 )
 
-[node name="TileMap2" parent="RoomManager_1" index="4"]
+[node name="TileMap2" parent="RoomManager_1" index="3"]
 position = Vector2( 480, 608 )
 
-[node name="Enemy_melee_b8" parent="RoomManager_1" index="5"]
+[node name="Enemy_melee_b8" parent="RoomManager_1" index="4"]
 position = Vector2( 480, -208 )
 
-[node name="Enemy_melee_b10" parent="RoomManager_1" index="6"]
+[node name="Enemy_melee_b10" parent="RoomManager_1" index="5"]
 position = Vector2( 1312, 608 )
 
-[node name="Enemy_melee_b12" parent="RoomManager_1" index="7"]
+[node name="Enemy_melee_b12" parent="RoomManager_1" index="6"]
 position = Vector2( 480, 1440 )
 
-[node name="Enemy_melee_b13" parent="RoomManager_1" index="8"]
+[node name="Enemy_melee_b13" parent="RoomManager_1" index="7"]
 position = Vector2( -320, 608 )
 
-[node name="Enemy_shoot" parent="RoomManager_1" index="9"]
+[node name="Enemy_shoot" parent="RoomManager_1" index="8"]
 position = Vector2( -320, 1440 )
 
-[node name="Enemy_shoot2" parent="RoomManager_1" index="10"]
+[node name="Enemy_shoot2" parent="RoomManager_1" index="9"]
 position = Vector2( 1312, -208 )
 
-[node name="Enemy_explotion" parent="RoomManager_1" index="11"]
+[node name="Enemy_explotion" parent="RoomManager_1" index="10"]
 position = Vector2( -320, -208 )
 
-[node name="Enemy_explotion2" parent="RoomManager_1" index="12"]
+[node name="Enemy_explotion2" parent="RoomManager_1" index="11"]
 position = Vector2( 1312, 1440 )
-
-[node name="RoomManager_2" parent="." instance=ExtResource( 17 )]
-
-[node name="TileMap" parent="RoomManager_2" index="0"]
-position = Vector2( 480, -1888 )
-
-[node name="TileMap2" parent="RoomManager_2" index="1"]
-position = Vector2( 480, -1888 )
-
-[node name="Puerta" parent="RoomManager_2" index="2"]
-position = Vector2( 480, -976 )
-
-[node name="Puerta3" parent="RoomManager_2" index="3"]
-position = Vector2( -432, -1888 )
-
-[node name="Puerta2" parent="RoomManager_2" index="4"]
-position = Vector2( 480, -2800 )
-
-[node name="Enemy_melee_b2" parent="RoomManager_2" index="5"]
-position = Vector2( 240, -1640 )
-
-[node name="Enemy_melee_b5" parent="RoomManager_2" index="6"]
-position = Vector2( -1674.11, 249.572 )
-
-[node name="Enemy_melee_b3" parent="RoomManager_2" index="7"]
-position = Vector2( 1296, -1064 )
-
-[node name="Enemy_melee_b4" parent="RoomManager_2" index="8"]
-position = Vector2( -336, -2704 )
-
-[node name="Enemy_melee_b6" parent="RoomManager_2" index="9"]
-position = Vector2( 712, -2144 )
-
-[node name="Enemy_shoot" parent="RoomManager_2" index="10"]
-position = Vector2( 712, -1640 )
-
-[node name="Enemy_shoot2" parent="RoomManager_2" index="11"]
-position = Vector2( 199.7, -2144 )
-
-[node name="Enemy_explotion" parent="RoomManager_2" index="12"]
-position = Vector2( -336, -1064 )
-
-[node name="Enemy_explotion2" parent="RoomManager_2" index="13"]
-position = Vector2( 1296, -2704 )
-
-[node name="RoomManager_3" parent="." instance=ExtResource( 7 )]
-
-[node name="TileMap" parent="RoomManager_3" index="0"]
-position = Vector2( 480, -4384 )
-
-[node name="TileMap2" parent="RoomManager_3" index="1"]
-position = Vector2( 480, -4384 )
-
-[node name="Puerta3" parent="RoomManager_3" index="2"]
-position = Vector2( 480, -3472 )
-
-[node name="Enemy_shoot2" parent="RoomManager_3" index="3"]
-position = Vector2( -320, -3584 )
-
-[node name="Enemy_shoot3" parent="RoomManager_3" index="4"]
-position = Vector2( -320, -4384 )
-
-[node name="Enemy_shoot4" parent="RoomManager_3" index="5"]
-position = Vector2( -320, -5184 )
-
-[node name="Enemy_shoot5" parent="RoomManager_3" index="6"]
-position = Vector2( 1280, -5184 )
-
-[node name="Enemy_shoot6" parent="RoomManager_3" index="7"]
-position = Vector2( 1280, -4384 )
-
-[node name="Enemy_shoot7" parent="RoomManager_3" index="8"]
-position = Vector2( 1280, -3584 )
-
-[node name="Enemy_melee_b" parent="RoomManager_3" index="9"]
-position = Vector2( -320, -4776 )
-
-[node name="Enemy_melee_b3" parent="RoomManager_3" index="10"]
-position = Vector2( 1280, -4776 )
-
-[node name="Enemy_explotion" parent="RoomManager_3" index="11"]
-position = Vector2( 464, -4560 )
-
-[node name="Enemy_melee_b4" parent="RoomManager_3" index="12"]
-position = Vector2( 488, -5096 )
-
-[node name="Enemy_explotion2" parent="RoomManager_3" index="13"]
-position = Vector2( 464, -4136 )
-
-[node name="Enemy_melee_b5" parent="RoomManager_3" index="14"]
-position = Vector2( 1280, -3984 )
-
-[node name="Enemy_melee_b2" parent="RoomManager_3" index="15"]
-position = Vector2( -320, -3984 )
 
 [node name="RoomManager_4" parent="." instance=ExtResource( 8 )]
 
-[node name="Enemy_melee_b9" parent="RoomManager_4" index="0"]
-position = Vector2( 989.932, -2362.32 )
-
-[node name="RoomBase" parent="RoomManager_4" index="1"]
+[node name="RoomBase" parent="RoomManager_4" index="0"]
 position = Vector2( -2016, -1888 )
 
-[node name="TileMap2" parent="RoomManager_4" index="2"]
+[node name="TileMap2" parent="RoomManager_4" index="1"]
 position = Vector2( -2016, -1888 )
 
-[node name="Puerta" parent="RoomManager_4" index="3"]
+[node name="Puerta" parent="RoomManager_4" index="2"]
 position = Vector2( -2016, -2800 )
 
-[node name="Puerta2" parent="RoomManager_4" index="4"]
-position = Vector2( -1104, -1888 )
-
-[node name="Puerta3" parent="RoomManager_4" index="5"]
+[node name="Puerta3" parent="RoomManager_4" index="3"]
 position = Vector2( -2016, -976 )
 
-[node name="Puerta4" parent="RoomManager_4" index="6"]
+[node name="Puerta4" parent="RoomManager_4" index="4"]
 position = Vector2( -2928, -1888 )
 
-[node name="Enemy_melee_b" parent="RoomManager_4" index="7"]
+[node name="Enemy_melee_b" parent="RoomManager_4" index="5"]
 position = Vector2( -2016, -1888 )
 
-[node name="Enemy_shoot" parent="RoomManager_4" index="8"]
+[node name="Enemy_shoot" parent="RoomManager_4" index="6"]
 position = Vector2( -2272, -1632 )
 
-[node name="Enemy_melee_b3" parent="RoomManager_4" index="9"]
+[node name="Enemy_melee_b3" parent="RoomManager_4" index="7"]
 position = Vector2( -1752, -1616 )
 
-[node name="Enemy_explotion" parent="RoomManager_4" index="10"]
+[node name="Enemy_explotion" parent="RoomManager_4" index="8"]
 position = Vector2( -2008, -2200 )
 
-[node name="Enemy_explotion2" parent="RoomManager_4" index="11"]
+[node name="Enemy_explotion2" parent="RoomManager_4" index="9"]
 position = Vector2( -2016, -1584 )
 
-[node name="Enemy_shoot2" parent="RoomManager_4" index="12"]
+[node name="Enemy_shoot2" parent="RoomManager_4" index="10"]
 position = Vector2( -1760, -2144 )
 
-[node name="Enemy_shoot3" parent="RoomManager_4" index="13"]
+[node name="Enemy_shoot3" parent="RoomManager_4" index="11"]
 position = Vector2( -1312, -1184 )
 
-[node name="Enemy_shoot4" parent="RoomManager_4" index="14"]
+[node name="Enemy_shoot4" parent="RoomManager_4" index="12"]
 position = Vector2( -2720, -2592 )
 
-[node name="Enemy_melee_b2" parent="RoomManager_4" index="15"]
+[node name="Enemy_melee_b2" parent="RoomManager_4" index="13"]
 position = Vector2( -2264, -2168 )
 
-[node name="Enemy_melee_b4" parent="RoomManager_4" index="16"]
+[node name="Enemy_melee_b4" parent="RoomManager_4" index="14"]
 position = Vector2( -1304, -2592 )
 
-[node name="Enemy_melee_b5" parent="RoomManager_4" index="17"]
+[node name="Enemy_melee_b5" parent="RoomManager_4" index="15"]
 position = Vector2( -2720, -1184 )
 
-[node name="Enemy_melee_b6" parent="RoomManager_4" index="18"]
+[node name="Enemy_melee_b6" parent="RoomManager_4" index="16"]
 position = Vector2( -1472.17, -1347.82 )
 
-[node name="Enemy_melee_b10" parent="RoomManager_4" index="21"]
+[node name="Enemy_melee_b10" parent="RoomManager_4" index="19"]
 position = Vector2( -1656.22, 956.498 )
 
 [node name="RoomManager_5" parent="." instance=ExtResource( 16 )]
@@ -508,23 +377,11 @@ margin_right = 2267.0
 margin_bottom = 1275.0
 mouse_filter = 2
 
-[node name="TileMap" type="TileMap" parent="."]
-tile_set = SubResource( 2 )
-cell_size = Vector2( 32, 32 )
-format = 1
-tile_data = PoolIntArray( -6422677, 0, 0, -6422673, 0, 0, -6357141, 0, 0, -6357137, 0, 0, -6291605, 0, 0, -6291601, 0, 0, -6226069, 0, 0, -6226065, 0, 0, -6160533, 0, 0, -6160529, 0, 0, -6094997, 0, 0, -6094993, 0, 0, -6029461, 0, 0, -6029457, 0, 0, -5963925, 0, 0, -5963921, 0, 0, -5898389, 0, 0, -5898385, 0, 0, -5832853, 0, 0, -5832849, 0, 0, -5767317, 0, 0, -5767313, 0, 0, -5701781, 0, 0, -5701777, 0, 0, -5701776, 0, 0, -5767151, 0, 0, -1703924, 0, 0, -1703919, 0, 0 )
-
-[node name="Passage" parent="." instance=ExtResource( 21 )]
-position = Vector2( 480, -640 )
-
 [node name="Passage8" parent="." instance=ExtResource( 21 )]
 position = Vector2( -2016, -3136 )
 
 [node name="Passage6" parent="." instance=ExtResource( 21 )]
 position = Vector2( -2016, -640 )
-
-[node name="Passage4" parent="." instance=ExtResource( 21 )]
-position = Vector2( 480, -3136 )
 
 [node name="Passage3" parent="." instance=ExtResource( 21 )]
 position = Vector2( 2944, -640 )
@@ -537,10 +394,6 @@ rotation = 1.5708
 position = Vector2( -768, 608 )
 rotation = 1.5708
 
-[node name="Passage5" parent="." instance=ExtResource( 21 )]
-position = Vector2( -768, -1888 )
-rotation = 1.5708
-
 [node name="Passage9" parent="." instance=ExtResource( 21 )]
 position = Vector2( -3264, -1886.94 )
 rotation = 1.5708
@@ -551,8 +404,6 @@ environment = SubResource( 3 )
 [editable path="GoldenRoom"]
 [editable path="GoldenRoom2"]
 [editable path="RoomManager_1"]
-[editable path="RoomManager_2"]
-[editable path="RoomManager_3"]
 [editable path="RoomManager_4"]
 [editable path="RoomManager_5"]
 [editable path="RoomManager_6"]
