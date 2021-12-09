@@ -7,11 +7,11 @@ onready var music = $LevelMusic
 var shake_amount = 0
 var default_offset = offset
 
-export (Array) var playList 
+export (Array) var playList
 
 func _ready():
 	randomize()
-	music.stream = playList[round(rand_range(-0.5, 2.49))]
+	music.stream = playList[round(rand_range(-0.5, 3.49))]
 	music.play()
 	music.volume_db = -35.0
 	GlobalObjects.camera = self

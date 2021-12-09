@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Sweet child of mine.wav-cdd263c258fb5d4e18863ad02417286c.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/Music/Sweet child of mine.wav"
+dest_files=[ "res://.import/Sweet child of mine.wav-cdd263c258fb5d4e18863ad02417286c.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
