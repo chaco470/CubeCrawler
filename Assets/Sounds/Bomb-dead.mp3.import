@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Bomb-dead.mp3-f919907c6b3275450e0e2894985c211b.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sounds/Bomb-dead.mp3"
+dest_files=[ "res://.import/Bomb-dead.mp3-f919907c6b3275450e0e2894985c211b.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -22,11 +22,6 @@ func initialize(rotation_given,spawn_position:Vector2, degree:Vector2, damage_to
 func _process(delta):
 	position += degree * bullet_speed * delta
 
-
-func _on_VisibilityNotifier2D_viewport_exited():
-	queue_free()
-
-
 func _on_Enemy_bullet_body_entered(body):
 	if body.has_method("notify_hit"):
 		body.notify_hit(-damage)
