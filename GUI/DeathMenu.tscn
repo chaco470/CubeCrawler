@@ -6,7 +6,7 @@
 [ext_resource path="res://Assets/Scripts/DeathMenu.gd" type="Script" id=4]
 [ext_resource path="res://Assets/Scenes/World.tscn" type="PackedScene" id=5]
 [ext_resource path="res://GUI/MainMenu.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Assets/Sounds/Music/Game_Over.wav" type="AudioStream" id=7]
+[ext_resource path="res://Assets/Sounds/Nothing_Else_Matters.ogg" type="AudioStream" id=7]
 [ext_resource path="res://Assets/Images/dead.png" type="Texture" id=8]
 [ext_resource path="res://Assets/Images/LuzFInal.png" type="Texture" id=9]
 [ext_resource path="res://Assets/Scenes/TCReffect.tscn" type="PackedScene" id=10]
@@ -117,7 +117,7 @@ margin_bottom = 368.0
 
 [node name="GameOver" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
-volume_db = -35.0
+volume_db = -20.0
 autoplay = true
 
 [connection signal="mouse_entered" from="Botones/DeathNewGameButton" to="." method="_on_DeathNewGameButton_mouse_entered"]

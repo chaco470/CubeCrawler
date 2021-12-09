@@ -13,19 +13,23 @@
 [ext_resource path="res://Assets/Scenes/GoldenRoom.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Assets/Rooms/RoomManager_Tutorial.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Assets/Scripts/Portal.gd" type="Script" id=13]
-[ext_resource path="res://Assets/Scenes/World.tscn" type="PackedScene" id=14]
+[ext_resource path="res://GUI/PauseMenu.tscn" type="PackedScene" id=14]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 175.122, 162.376 )
 
 [node name="Node2D" type="Node"]
 
+[node name="PauseCL" parent="." instance=ExtResource( 14 )]
+layer = 2
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 4
 
 [node name="TCReffect" parent="CanvasLayer" instance=ExtResource( 2 )]
-visible = false
 margin_right = 1930.0
 margin_bottom = 1085.0
+mouse_filter = 2
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 952, 548 )
@@ -63,7 +67,6 @@ rotation = 1.5708
 scale = Vector2( 0.79052, 0.689759 )
 texture = ExtResource( 10 )
 script = ExtResource( 13 )
-first_level_scene = ExtResource( 14 )
 
 [node name="Area2D" type="Area2D" parent="Portal"]
 
