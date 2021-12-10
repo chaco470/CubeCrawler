@@ -25,8 +25,7 @@ func _on_Detector_body_entered(body):
 func _on_Detector_body_exited(body):
 	if body.is_in_group("player"):
 		target = null
-		explotion_timer.stop()
-		explotion_timer.wait_time = 1
+		
 
 
 func _on_ExplotionTimer_timeout():
